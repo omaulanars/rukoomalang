@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog & Tips Properti | Ruko Malang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           1. BASE VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary: #0f2c59;
+            --secondary: #ff9f1c;
+            --light: #f5f7fa;
+            --dark: #1a1a1a;
+            --gray: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           2. HEADER & NAV
+           ========================================= */
+        header {
+            background: #fff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        header h1 {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: #fff !important;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #e08a15;
+            transform: translateY(-2px);
+        }
+
+        .nav-toggle,
+        .nav-toggle-btn {
+            display: none;
+        }
+
+        /* =========================================
+           3. PAGE HEADER & SEARCH
+           ========================================= */
+        .page-header {
+            background: var(--primary);
+            color: #fff;
+            padding: 60px 20px 80px;
+            text-align: center;
+        }
+
+        .page-header h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-container {
+            max-width: 700px;
+            margin: -30px auto 50px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-box {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .search-box:focus-within {
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            padding: 10px;
+            color: #333;
+        }
+
+        .search-box button {
+            background: var(--secondary);
+            color: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-box button:hover {
+            background: #e08a15;
+        }
+
+        /* =========================================
+           4. BLOG GRID
+           ========================================= */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .blog-meta {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .blog-meta span i {
+            color: var(--secondary);
+            margin-right: 4px;
+        }
+
+        .blog-title {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .read-more:hover {
+            color: #e08a15;
+            gap: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #noResults {
+            text-align: center;
+            width: 100%;
+            grid-column: 1 / -1;
+            padding: 40px;
+            color: #777;
+            display: none;
+        }
+
+        /* =========================================
+           5. FOOTER
+           ========================================= */
+        footer {
+            background: #0a1f3f;
+            color: #b0c0d8;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-col h4 {
+            color: #ff9f1c;
+            margin-bottom: 16px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a {
+            color: #b0c0d8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ff9f1c;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1d2f50;
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 992px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .nav-toggle-btn {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-toggle:checked~nav {
+                display: flex;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>RukoMalang</h1>
+        <label for="nav-toggle" class="nav-toggle-btn">☰</label>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="ruko.html">Listing</a>
+            <a href="area.html">Area</a>
+            <a href="blog.html" style="color: var(--secondary);">Blog</a>
+            <a href="kontak.html">Kontak</a>
+            <a href="https://wa.me/62895639068080?text=Halo%20Admin%20RukoMalang,%20saya%20tertarik%20untuk%20memasang%20iklan%20properti%20ruko%20saya"
+                target="_blank" class="btn-primary">Pasang Iklan</a>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h2>Blog & Berita Properti</h2>
+        <p>Dapatkan wawasan terbaru seputar investasi ruko dan bisnis di Malang.</p>
+    </section>
+
+    <div class="search-container">
+        <div class="search-box">
+            <i class="fas fa-search" style="color: #999; margin-right: 10px;"></i>
+            <input type="text" id="blogSearchInput"
+                placeholder="Cari topik artikel (contoh: Tips, Legalitas, Bisnis)..." onkeyup="filterBlog()">
+            <button onclick="filterBlog()"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <section class="blog-container">
+        <div class="blog-grid" id="blogGrid">
+
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" alt="Tips Memilih Ruko"
+                    class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> 10 Okt 2025</span>
+                        <span><i class="fas fa-tag"></i> Tips Bisnis</span>
+                    </div>
+                    <h3 class="blog-title">5 Tips Memilih Lokasi Ruko yang Pasti Cuan di Malang</h3>
+                    <p class="blog-excerpt">
+                        Lokasi adalah kunci utama keberhasilan bisnis. Pelajari faktor-faktor penting seperti traffic,
+                        demografi, dan aksesibilitas sebelum membeli ruko.
+                    </p>
+                    <a href="detail-artikel-1.html" class="read-more">Baca Selengkapnya <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40" alt="Legalitas Ruko"
+                    class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> 5 Nov 2025</span>
+                        <span><i class="fas fa-tag"></i> Legalitas</span>
+                    </div>
+                    <h3 class="blog-title">Panduan Lengkap Mengurus Izin Usaha Ruko (OSS)</h3>
+                    <p class="blog-excerpt">
+                        Jangan sampai usaha Anda terkendala masalah izin. Simak panduan langkah demi langkah mengurus
+                        NIB dan izin lokasi usaha ruko melalui sistem OSS.
+                    </p>
+                    <a href="detail-artikel-2.html" class="read-more">Baca Selengkapnya <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd" alt="Tren Properti"
+                    class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> 12 Des 2025</span>
+                        <span><i class="fas fa-tag"></i> Market Update</span>
+                    </div>
+                    <h3 class="blog-title">Tren Properti Komersial Malang 2026: Apa yang Diminati?</h3>
+                    <p class="blog-excerpt">
+                        Analisis pasar menunjukkan pergeseran tren ke arah ruko multifungsi dan co-working space.
+                        Temukan peluang investasi terbaik tahun ini.
+                    </p>
+                    <a href="detail-artikel-3.html" class="read-more">Baca Selengkapnya <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div id="noResults">
+                <i class="fas fa-search" style="font-size: 30px; margin-bottom: 10px; display: block;"></i>
+                <p>Maaf, artikel yang Anda cari tidak ditemukan.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>RukoMalang</h4>
+                <p>Jual & sewa ruko strategis di Malang dan sekitarnya.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="ruko.html">Listing Ruko</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Area Populer</h4>
+                <ul>
+                    <li><a href="area.html#suhat">Soekarno Hatta</a></li>
+                    <li><a href="area.html#dinoyo">Dinoyo</a></li>
+                    <li><a href="area.html#sawojajar">Sawojajar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Network</h4>
+                <ul>
+                    <li><a href="#">Properti Malang</a></li>
+                    <li><a href="#">Investasi Properti</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul>
+                    <li>📞 0895-6390-68080</li>
+                    <li>✉️ info@rukomalang.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ruko Malang. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function filterBlog() {
+            let input = document.getElementById('blogSearchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('blog-card');
+            let hasResults = false;
+
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].querySelector('.blog-title').innerText.toLowerCase();
+                let excerpt = cards[i].querySelector('.blog-excerpt').innerText.toLowerCase();
+                let tag = cards[i].querySelector('.blog-meta').innerText.toLowerCase();
+
+                if (title.includes(input) || excerpt.includes(input) || tag.includes(input)) {
+                    cards[i].style.display = "";
+                    hasResults = true;
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+
+            let noResultsMsg = document.getElementById('noResults');
+            if (hasResults) {
+                noResultsMsg.style.display = "none";
+            } else {
+                noResultsMsg.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

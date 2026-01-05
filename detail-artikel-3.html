@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tren Properti Komersial Malang 2026 | Blog RukoMalang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           1. BASE VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary: #0f2c59;
+            --secondary: #ff9f1c;
+            --dark: #1a1a1a;
+            --gray: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* =========================================
+           2. HEADER & NAV
+           ========================================= */
+        header {
+            background: #fff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        header h1 {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: #fff !important;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #e08a15;
+            transform: translateY(-2px);
+        }
+
+        .nav-toggle,
+        .nav-toggle-btn {
+            display: none;
+        }
+
+        /* =========================================
+           3. BLOG DETAIL LAYOUT
+           ========================================= */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+            background: transparent;
+        }
+
+        /* --- Breadcrumb & Header --- */
+        .breadcrumb {
+            padding: 0 0 20px;
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .article-header {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .article-title {
+            font-size: 42px;
+            color: var(--primary);
+            line-height: 1.3;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .article-meta {
+            font-size: 15px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .article-meta span i {
+            color: var(--secondary);
+            margin-right: 6px;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        /* --- Content Styling --- */
+        .article-content {
+            font-size: 18px;
+            color: #222;
+        }
+
+        .article-content p {
+            margin-bottom: 25px;
+            text-align: left;
+            line-height: 1.9;
+        }
+
+        .article-content h2 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .article-content h3 {
+            font-size: 22px;
+            color: var(--dark);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* --- TOC, Quote, Share --- */
+        .toc-box {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 50px;
+        }
+
+        .toc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 20px;
+            display: block;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .toc-list.hidden {
+            display: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 12px;
+        }
+
+        .toc-list li a {
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        .toc-list li a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+
+        .read-also-box {
+            background: #fff;
+            border-left: 4px solid var(--secondary);
+            padding: 10px 20px;
+            margin: 40px 0;
+        }
+
+        .read-also-box h4 {
+            display: inline-block;
+            margin: 0 10px 0 0;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .read-also-box a {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .read-also-box a:hover {
+            text-decoration: underline;
+            color: var(--secondary);
+        }
+
+        blockquote {
+            font-size: 24px;
+            font-weight: 300;
+            font-style: italic;
+            color: #333;
+            padding: 20px 40px;
+            margin: 50px 0;
+            position: relative;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        blockquote::before {
+            content: "\201C";
+            font-size: 80px;
+            color: var(--secondary);
+            font-family: serif;
+            display: block;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .share-section {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .share-title {
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-share {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 20px;
+        }
+
+        .share-wa {
+            background: #25d366;
+        }
+
+        .share-fb {
+            background: #1877f2;
+        }
+
+        .share-tw {
+            background: #1da1f2;
+        }
+
+        .btn-share:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* =========================================
+           4. RELATED ARTICLES
+           ========================================= */
+        .related-section {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .related-heading {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-left: 5px solid var(--secondary);
+            padding-left: 15px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .related-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border-color: var(--secondary);
+        }
+
+        .related-img {
+            width: 120px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .related-info span {
+            font-size: 12px;
+            color: var(--secondary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .related-info h4 {
+            font-size: 16px;
+            color: var(--dark);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Footer & Responsive */
+        footer {
+            background: #0a1f3f;
+            color: #b0c0d8;
+            padding: 50px 20px 20px;
+            margin-top: 0;
+        }
+
+        .footer-col h4 {
+            color: #ff9f1c;
+            margin-bottom: 16px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a {
+            color: #b0c0d8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ff9f1c;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1d2f50;
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .nav-toggle-btn {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-toggle:checked~nav {
+                display: flex;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .article-title {
+                font-size: 32px;
+            }
+
+            .featured-image {
+                height: 250px;
+            }
+
+            .article-container {
+                padding: 30px 20px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>RukoMalang</h1>
+        <label for="nav-toggle" class="nav-toggle-btn">☰</label>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="ruko.html">Listing</a>
+            <a href="area.html">Area</a>
+            <a href="blog.html" style="color: var(--secondary);">Blog</a>
+            <a href="kontak.html">Kontak</a>
+            <a href="https://wa.me/62895639068080?text=Halo%20Admin%20RukoMalang,%20saya%20tertarik%20untuk%20memasang%20iklan%20properti%20ruko%20saya"
+                target="_blank" class="btn-primary">Pasang Iklan</a>
+        </nav>
+    </header>
+
+    <article class="article-container">
+
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="blog.html">Blog</a> &nbsp;/&nbsp; Market Update
+        </div>
+
+        <div class="article-header">
+            <h1 class="article-title">Tren Properti Komersial Malang 2026: Apa yang Diminati?</h1>
+            <div class="article-meta">
+                <span><i class="far fa-calendar"></i> 12 Des 2025</span>
+                <span><i class="fas fa-tag"></i> Market Update</span>
+                <span><i class="far fa-user"></i> Ditulis oleh Admin</span>
+            </div>
+        </div>
+
+        <img src="img/blog3.jpg" alt="Tren Properti Malang" class="featured-image">
+
+        <div class="article-content">
+
+            <p>Memasuki tahun 2026, lanskap properti komersial di Kota Malang mengalami pergeseran yang cukup
+                signifikan. Sebagai kota pendidikan dan pariwisata yang terus tumbuh, kebutuhan akan ruang usaha tidak
+                lagi sekadar "tempat berjualan", melainkan menuntut fungsionalitas dan estetika.</p>
+
+            <p>Bagi Anda para investor properti atau pebisnis yang ingin ekspansi ke Malang, memahami tren pasar adalah
+                kunci untuk mendapatkan <em>Return on Investment (ROI)</em> yang maksimal. Berikut adalah analisis tren
+                properti komersial yang diprediksi akan *booming* di tahun 2026.</p>
+
+            <div class="toc-box">
+                <div class="toc-header" onclick="toggleToc()">
+                    <span><i class="fas fa-list-ul" style="margin-right:8px;"></i> Daftar Isi</span>
+                    <i class="fas fa-chevron-down" id="tocIcon"></i>
+                </div>
+                <ul class="toc-list" id="tocList">
+                    <li><a href="#poin1">1. Bangkitnya Ruko Multifungsi (Mixed-Use)</a></li>
+                    <li><a href="#poin2">2. Co-Working Space & Creative Hub</a></li>
+                    <li><a href="#poin3">3. Experience-Based Retail (Cafe & Lifestyle)</a></li>
+                    <li><a href="#poin4">4. Pergeseran ke Kawasan Penyangga</a></li>
+                    <li><a href="#poin5">5. Kesimpulan Investasi</a></li>
+                </ul>
+            </div>
+
+            <h2 id="poin1">1. Bangkitnya Ruko Multifungsi (Mixed-Use)</h2>
+            <p>Konsep ruko konvensional mulai ditinggalkan. Di tahun 2026, permintaan tertinggi adalah ruko dengan
+                konsep <em>mixed-use</em>. Artinya, ruko tersebut didesain agar lantai bawah digunakan untuk
+                retail/bisnis, sementara lantai atas nyaman untuk hunian (SOHO - Small Office Home Office) atau studio.
+            </p>
+            <p>Hal ini didorong oleh mahalnya harga tanah di pusat kota Malang, sehingga efisiensi ruang menjadi
+                prioritas utama.</p>
+
+            <h2 id="poin2">2. Co-Working Space & Creative Hub</h2>
+            <p>Malang adalah kota pelajar dengan ribuan mahasiswa dan pekerja lepas (*freelancer*). Permintaan akan
+                ruang kerja fleksibel terus meningkat.</p>
+
+            <blockquote>
+                "Ruko dengan desain interior industrial modern dan akses internet kecepatan tinggi (fiber optic ready)
+                menjadi incaran utama untuk diubah menjadi co-working space atau kantor start-up."
+            </blockquote>
+
+            <h2 id="poin3">3. Experience-Based Retail</h2>
+            <p>Bisnis ritel konvensional semakin tergerus oleh e-commerce. Namun, bisnis yang menawarkan "pengalaman"
+                justru berkembang pesat. Ruko yang cocok untuk <em>coffee shop</em> tematik, restoran dengan area
+                outdoor/rooftop, dan toko hobi (thrift shop, merchandise) semakin diburu, terutama di kawasan sekitar
+                Suhat dan Kayutangan Heritage.</p>
+
+            <div class="read-also-box">
+                <h4>Baca Juga:</h4>
+                <a href="detail-artikel-2.html">Panduan Lengkap Mengurus Izin Usaha Ruko (OSS)</a>
+            </div>
+
+            <h2 id="poin4">4. Pergeseran ke Kawasan Penyangga</h2>
+            <p>Pusat kota seperti Klojen dan Lowokwaru semakin padat dan mahal. Tren 2026 menunjukkan pergeseran
+                investasi ke kawasan penyangga seperti Kedungkandang (dekat pintu tol) dan Dau (dekat kampus UIN baru).
+                Harga ruko di area ini masih terjangkau namun memiliki potensi kenaikan harga (capital gain) yang sangat
+                tinggi dalam 2-3 tahun ke depan.</p>
+
+            <h2 id="poin5">5. Kesimpulan Investasi</h2>
+            <p>Tahun 2026 adalah tahun optimisme bagi pasar properti Malang. Kuncinya adalah <strong>adaptasi</strong>.
+                Pilihlah ruko yang fleksibel, memiliki akses digital yang baik, dan berada di lokasi yang sesuai dengan
+                target demografi usaha (mahasiswa vs keluarga).</p>
+
+        </div>
+
+        <div class="share-section">
+            <span class="share-title">Bagikan analisis ini:</span>
+            <div class="share-buttons">
+                <a href="https://wa.me/?text=Tren%20Properti%20Malang%202026%20cek%20disini:%20[URL_DISINI]"
+                    target="_blank" class="btn-share share-wa">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=[URL_DISINI]" target="_blank"
+                    class="btn-share share-fb">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=Tren%20Properti%20Malang&url=[URL_DISINI]"
+                    target="_blank" class="btn-share share-tw">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+
+    </article>
+
+    <section class="related-section">
+        <h3 class="related-heading">Artikel Lainnya</h3>
+        <div class="related-grid">
+
+            <a href="detail-artikel-1.html" class="related-card">
+                <img src="img/blog1.jpg" alt="Tips Ruko" class="related-img">
+                <div class="related-info">
+                    <span>Tips Bisnis</span>
+                    <h4>5 Tips Memilih Lokasi Ruko yang Pasti Cuan</h4>
+                </div>
+            </a>
+
+            <a href="detail-artikel-2.html" class="related-card">
+                <img src="img/blog2.jpg" alt="Legalitas" class="related-img">
+                <div class="related-info">
+                    <span>Legalitas</span>
+                    <h4>Panduan Lengkap Mengurus Izin Usaha Ruko (OSS)</h4>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>RukoMalang</h4>
+                <p>Jual & sewa ruko strategis di Malang dan sekitarnya.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="ruko.html">Listing Ruko</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Area Populer</h4>
+                <ul>
+                    <li><a href="area.html#suhat">Soekarno Hatta</a></li>
+                    <li><a href="area.html#dinoyo">Dinoyo</a></li>
+                    <li><a href="area.html#sawojajar">Sawojajar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Network</h4>
+                <ul>
+                    <li><a href="#">Properti Malang</a></li>
+                    <li><a href="#">Investasi Properti</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul>
+                    <li>📞 0895-6390-68080</li>
+                    <li>✉️ info@rukomalang.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ruko Malang. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleToc() {
+            var list = document.getElementById("tocList");
+            var icon = document.getElementById("tocIcon");
+
+            if (list.classList.contains("hidden")) {
+                list.classList.remove("hidden");
+                icon.classList.remove("fa-chevron-up");
+                icon.classList.add("fa-chevron-down");
+            } else {
+                list.classList.add("hidden");
+                icon.classList.remove("fa-chevron-down");
+                icon.classList.add("fa-chevron-up");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

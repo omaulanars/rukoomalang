@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* =========================================
+           1. BASE VARIABLES & RESET
+           ========================================= */
         :root {
             --primary: #0f2c59;
             --secondary: #ff9f1c;
@@ -30,7 +33,9 @@
             line-height: 1.6;
         }
 
-        /* ===== HEADER ===== */
+        /* =========================================
+           2. HEADER & NAV
+           ========================================= */
         header {
             background: #fff;
             padding: 15px 20px;
@@ -203,7 +208,7 @@
             color: var(--primary);
         }
 
-        /* ===== AREA CARDS (BARU) ===== */
+        /* ===== AREA CARDS ===== */
         .listing {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -212,7 +217,6 @@
             margin: 0 auto;
         }
 
-        /* Style Baru untuk Kartu Area */
         .area-card {
             position: relative;
             border-radius: 20px;
@@ -236,7 +240,6 @@
 
         .area-card:hover img {
             transform: scale(1.1);
-            /* Zoom effect gambar */
         }
 
         .area-overlay {
@@ -253,7 +256,6 @@
             font-size: 24px;
             margin-bottom: 5px;
             color: #fff;
-            /* Pastikan teks putih */
         }
 
         .area-overlay p {
@@ -269,7 +271,6 @@
 
         .area-card:hover .area-overlay i {
             margin-left: 10px;
-            /* Panah bergerak saat hover */
         }
 
         /* ===== CTA ===== */
@@ -572,7 +573,7 @@
             <a href="index.html">Beranda</a>
             <a href="ruko.html">Listing</a>
             <a href="area.html">Area</a>
-            <a href="kontak.html">Kontak</a>
+            <a href="blog.html">Blog</a> <a href="kontak.html">Kontak</a>
             <a href="https://wa.me/62895639068080?text=Halo%20Admin%20RukoMalang,%20saya%20tertarik%20untuk%20memasang%20iklan%20properti%20ruko%20saya"
                 target="_blank" class="btn-primary">
                 Pasang Iklan
@@ -616,6 +617,7 @@
             window.location.href = `ruko.html?lokasi=${lokasi}&tipe=${tipe}`;
         }
     </script>
+
     <section class="stats-main">
         <div class="stat-box">
             <h3>120+</h3>
@@ -638,12 +640,14 @@
             <p>Berpengalaman</p>
         </div>
     </section>
+
     <section class="section">
         <h2>Jelajahi Area Populer</h2>
         <div class="listing">
 
             <a href="area.html#suhat" class="area-card">
-                <img src="img/rumah1.jpg" alt="Soekarno Hatta" />
+                <img src="img/rumah1.jpg" alt="Soekarno Hatta"
+                    onerror="this.src='https://images.unsplash.com/photo-1568605114967-8130f3a36994'" />
                 <div class="area-overlay">
                     <h3>Soekarno Hatta</h3>
                     <p>Pusat Bisnis & Kuliner <i class="fas fa-arrow-right"></i></p>
@@ -651,7 +655,8 @@
             </a>
 
             <a href="area.html#dinoyo" class="area-card">
-                <img src="img/rumah2.jpg" alt="Dinoyo" />
+                <img src="img/rumah2.jpg" alt="Dinoyo"
+                    onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c'" />
                 <div class="area-overlay">
                     <h3>Dinoyo</h3>
                     <p>Kawasan Kampus & Retail <i class="fas fa-arrow-right"></i></p>
@@ -659,7 +664,8 @@
             </a>
 
             <a href="area.html#ijen" class="area-card">
-                <img src="img/rumah1.jpg" alt="Ijen" />
+                <img src="img/rumah1.jpg" alt="Ijen"
+                    onerror="this.src='https://images.unsplash.com/photo-1460317442991-0ec12438a906'" />
                 <div class="area-overlay">
                     <h3>Ijen & Klojen</h3>
                     <p>Premium & Heritage <i class="fas fa-arrow-right"></i></p>
@@ -667,7 +673,8 @@
             </a>
 
             <a href="area.html#sawojajar" class="area-card">
-                <img src="img/rumah2.jpg" alt="Sawojajar" />
+                <img src="img/rumah2.jpg" alt="Sawojajar"
+                    onerror="this.src='https://images.unsplash.com/photo-1572120360610-d971b9b78825'" />
                 <div class="area-overlay">
                     <h3>Sawojajar</h3>
                     <p>Pemukiman & Daily Needs <i class="fas fa-arrow-right"></i></p>
@@ -676,6 +683,7 @@
 
         </div>
     </section>
+
     <section class="section">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 30px;">Keunggulan Kami</h2>
@@ -703,11 +711,13 @@
             </div>
         </div>
     </section>
+
     <section class="cta">
         <h2>Butuh Ruko untuk Bisnis Anda?</h2>
         <p>Konsultasi gratis & survey lokasi sekarang juga</p>
         <a href="kontak.html">Hubungi Kami</a>
     </section>
+
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
@@ -721,6 +731,7 @@
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="ruko.html">Listing Ruko</a></li>
                     <li><a href="area.html">Area</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="kontak.html">Kontak</a></li>
                 </ul>
             </div>
