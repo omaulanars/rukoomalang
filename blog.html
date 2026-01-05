@@ -28,10 +28,14 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        /* PERBAIKAN: Mencegah scroll menyamping */
+        html,
         body {
             background: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         /* =========================================
@@ -100,6 +104,7 @@
             background: var(--primary);
             color: #fff;
             padding: 60px 20px 80px;
+            /* Extra padding bottom for search bar overlap */
             text-align: center;
         }
 
@@ -115,12 +120,16 @@
             margin: 0 auto;
         }
 
+        /* PERBAIKAN SEARCH CONTAINER */
         .search-container {
             max-width: 700px;
             margin: -30px auto 50px;
+            /* Overlap effect default desktop */
             padding: 0 20px;
             position: relative;
             z-index: 10;
+            width: 100%;
+            /* Pastikan lebar penuh */
         }
 
         .search-box {
@@ -132,6 +141,8 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             border: 1px solid transparent;
             transition: 0.3s;
+            width: 100%;
+            /* Pastikan lebar penuh dalam container */
         }
 
         .search-box:focus-within {
@@ -141,11 +152,14 @@
 
         .search-box input {
             flex: 1;
+            /* Input mengambil sisa ruang */
             border: none;
             outline: none;
             font-size: 16px;
             padding: 10px;
             color: #333;
+            min-width: 0;
+            /* Mencegah input overflow di flexbox */
         }
 
         .search-box button {
@@ -160,6 +174,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
+            /* Mencegah tombol mengecil */
         }
 
         .search-box button:hover {
@@ -290,6 +306,7 @@
         .footer-col ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .footer-col ul li {
@@ -323,6 +340,10 @@
             font-size: 14px;
         }
 
+        /* =========================================
+           6. RESPONSIVE (MOBILE FIX)
+           ========================================= */
+
         @media (max-width: 992px) {
             .blog-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -350,10 +371,48 @@
                 flex-direction: column;
                 padding: 20px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 99;
             }
 
             .nav-toggle:checked~nav {
                 display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav .btn-primary {
+                margin-top: 15px;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Fix Search Bar Mobile */
+            .page-header {
+                padding: 40px 20px 60px;
+            }
+
+            .page-header h2 {
+                font-size: 28px;
+            }
+
+            .search-container {
+                margin: -30px auto 40px;
+                padding: 0 15px;
+                /* Padding lebih kecil agar tidak terlalu mepet */
+            }
+
+            .search-box {
+                padding: 8px 15px;
+                /* Padding dalam search box dikecilkan sedikit */
+            }
+
+            .search-box input {
+                font-size: 14px;
+                /* Font input dikecilkan sedikit */
             }
 
             .blog-grid {
@@ -398,8 +457,7 @@
     <div class="search-container">
         <div class="search-box">
             <i class="fas fa-search" style="color: #999; margin-right: 10px;"></i>
-            <input type="text" id="blogSearchInput"
-                placeholder="Cari topik artikel (contoh: Tips, Legalitas, Bisnis)..." onkeyup="filterBlog()">
+            <input type="text" id="blogSearchInput" placeholder="Cari topik artikel..." onkeyup="filterBlog()">
             <button onclick="filterBlog()"><i class="fas fa-arrow-right"></i></button>
         </div>
     </div>
