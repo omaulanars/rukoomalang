@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hubungi Kami | Ruko Malang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           1. BASE VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary: #0f2c59;
+            --secondary: #ff9f1c;
+            --light: #f5f7fa;
+            --dark: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           2. HEADER & NAV
+           ========================================= */
+        header {
+            background: #fff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        header h1 {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: #fff !important;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #e08a15;
+            transform: translateY(-2px);
+        }
+
+        .nav-toggle,
+        .nav-toggle-btn {
+            display: none;
+        }
+
+        /* =========================================
+           3. PAGE HEADER
+           ========================================= */
+        .page-header {
+            background: var(--primary);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-header h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           4. CONTACT LAYOUT
+           ========================================= */
+        .contact-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+        }
+
+        /* --- Left Column --- */
+        .info-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .info-icon {
+            background: rgba(15, 44, 89, 0.1);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .info-content h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .info-content p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .map-wrapper {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 300px;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- Right Column: Form --- */
+        .contact-form-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-form-box h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+            background: #f9f9f9;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary);
+            background: #fff;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #0a1f3f;
+            transform: translateY(-2px);
+        }
+
+        /* Footer & Responsive Styles */
+        footer {
+            background: #0a1f3f;
+            color: #b0c0d8;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-col h4 {
+            color: #ff9f1c;
+            margin-bottom: 16px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a {
+            color: #b0c0d8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ff9f1c;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1d2f50;
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .map-wrapper {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .nav-toggle-btn {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-toggle:checked~nav {
+                display: flex;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>RukoMalang</h1>
+        <label for="nav-toggle" class="nav-toggle-btn">☰</label>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="ruko.html">Listing</a>
+            <a href="area.html">Area</a>
+            <a href="kontak.html" style="color: var(--secondary);">Kontak</a>
+            <a href="https://wa.me/62895639068080?text=Halo%20Admin%20RukoMalang,%20saya%20tertarik%20untuk%20memasang%20iklan%20properti%20ruko%20saya"
+                target="_blank" class="btn-primary">
+                Pasang Iklan
+            </a>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h2>Hubungi Kami</h2>
+        <p>Punya pertanyaan atau ingin menjadwalkan survei? Tim kami siap membantu Anda.</p>
+    </section>
+
+    <section class="contact-container">
+
+        <div class="contact-info-wrapper">
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="info-content">
+                    <h4>WhatsApp Admin</h4>
+                    <p>0895-6390-68080 (Fast Response)</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                <div class="info-content">
+                    <h4>Email</h4>
+                    <p>info@rukomalang.com</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-content">
+                    <h4>Alamat Kantor</h4>
+                    <p>Kota Malang, Jawa Timur</p>
+                </div>
+            </div>
+
+            <div class="map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63229.07357770857!2d112.58966779354096!3d-7.978639463999238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd62822063dc2db%3A0x7859667772719602!2sMalang%2C%20Kota%20Malang%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1709623000000!5m2!1sid!2sid"
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="contact-form-box">
+            <h3>Kirim Pesan WhatsApp</h3>
+            <form onsubmit="kirimPesan(event)">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Nomor WhatsApp</label>
+                    <input type="tel" id="wa" placeholder="Contoh: 0812..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Perihal</label>
+                    <select id="perihal">
+                        <option>Saya ingin membeli ruko</option>
+                        <option>Saya ingin menyewa ruko</option>
+                        <option>Saya ingin menitipkan properti</option>
+                        <option>Kerjasama / Pertanyaan Umum</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Pesan Anda</label>
+                    <textarea id="pesan" rows="5" placeholder="Tuliskan detail kebutuhan Anda..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Kirim Pesan Sekarang
+                </button>
+            </form>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>RukoMalang</h4>
+                <p>Jual & sewa ruko strategis di Malang dan sekitarnya.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="ruko.html">Listing Ruko</a></li>
+                    <li><a href="#">Pasang Iklan</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Area Populer</h4>
+                <ul>
+                    <li><a href="area.html#suhat">Soekarno Hatta</a></li>
+                    <li><a href="area.html#dinoyo">Dinoyo</a></li>
+                    <li><a href="area.html#sawojajar">Sawojajar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Network</h4>
+                <ul>
+                    <li><a href="#">Properti Malang</a></li>
+                    <li><a href="#">Investasi Properti</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul>
+                    <li>📞 0895-6390-68080</li>
+                    <li>✉️ info@rukomalang.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ruko Malang. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function kirimPesan(event) {
+            event.preventDefault(); // Mencegah reload halaman
+
+            // Ambil data dari form
+            var nama = document.getElementById('nama').value;
+            var wa = document.getElementById('wa').value;
+            var perihal = document.getElementById('perihal').value;
+            var pesan = document.getElementById('pesan').value;
+
+            // Nomor tujuan (Format 62...)
+            var nomorTujuan = "62895639068080";
+
+            // Format Pesan WhatsApp (%0A adalah kode untuk Enter/Baris Baru)
+            var text = `Halo Admin RukoMalang, saya ingin bertanya.%0A%0A` +
+                `*Nama:* ${nama}%0A` +
+                `*No WA:* ${wa}%0A` +
+                `*Perihal:* ${perihal}%0A` +
+                `*Pesan:* ${pesan}`;
+
+            // Buka WhatsApp di tab baru
+            var url = `https://wa.me/${nomorTujuan}?text=${text}`;
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>

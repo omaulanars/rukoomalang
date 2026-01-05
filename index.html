@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruko Malang | Jual & Sewa Ruko Strategis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0f2c59;
+            --secondary: #ff9f1c;
+            --light: #f5f7fa;
+            --dark: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        header h1 {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: #fff !important;
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #e08a15;
+            transform: translateY(-2px);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(120deg, rgba(15, 44, 89, 0.9), rgba(15, 44, 89, 0.6)),
+                url('https://images.unsplash.com/photo-1560448075-bb7c7b1cddc3') center/cover no-repeat;
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            margin: 15px auto;
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+
+        .search-box {
+            background: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 700px;
+            margin: 25px auto 0;
+        }
+
+        .search-box select,
+        .search-box button {
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .search-box select {
+            background: #f1f1f1;
+        }
+
+        .search-box button {
+            background: var(--secondary);
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #e08a15;
+        }
+
+        /* ===== STATS & FEATURES ===== */
+        .stat-box {
+            background: #fff;
+            padding: 24px 10px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-4px);
+        }
+
+        .stat-box h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .stat-box i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .stat-box p {
+            font-size: 14px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .stats-main {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ===== SECTION STYLE ===== */
+        .section {
+            padding: 60px 20px;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        /* ===== AREA CARDS (BARU) ===== */
+        .listing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Style Baru untuk Kartu Area */
+        .area-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 300px;
+            text-decoration: none;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .area-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .area-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .area-card:hover img {
+            transform: scale(1.1);
+            /* Zoom effect gambar */
+        }
+
+        .area-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+            padding: 30px 20px;
+            color: #fff;
+        }
+
+        .area-overlay h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #fff;
+            /* Pastikan teks putih */
+        }
+
+        .area-overlay p {
+            font-size: 14px;
+            opacity: 0.9;
+            color: #ddd;
+        }
+
+        .area-overlay i {
+            margin-left: 5px;
+            transition: margin-left 0.3s;
+        }
+
+        .area-card:hover .area-overlay i {
+            margin-left: 10px;
+            /* Panah bergerak saat hover */
+        }
+
+        /* ===== CTA ===== */
+        .cta {
+            background: linear-gradient(120deg, var(--primary), #183d7a);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 40px 40px 0 0;
+            margin-bottom: 0;
+        }
+
+        .cta h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .cta a {
+            display: inline-block;
+            margin-top: 20px;
+            background: var(--secondary);
+            padding: 14px 36px;
+            border-radius: 40px;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .cta a:hover {
+            background: #e08a15;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0a1f3f;
+            color: #b0c0d8;
+            padding: 50px 20px 20px;
+        }
+
+        .footer-col h4 {
+            color: #ff9f1c;
+            margin-bottom: 16px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #b0c0d8;
+            margin: 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a {
+            color: #b0c0d8;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: inline-block;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ff9f1c;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #1d2f50;
+            text-align: center;
+            font-size: 14px;
+            color: #8a9bbd;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        .nav-toggle,
+        .nav-toggle-btn {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle-btn {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                color: var(--dark);
+                margin-left: 15px;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                display: none;
+                z-index: 99;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 10px 0;
+                font-size: 16px;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            .btn-primary {
+                display: inline-block;
+                width: auto;
+                margin-top: 10px;
+                padding: 10px 25px;
+            }
+
+            .nav-toggle:checked~nav {
+                display: flex;
+            }
+
+            .stats-main,
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .stats-main .stat-box:nth-child(5) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                width: calc(50% - 8px);
+            }
+
+            .stats-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-areas: "produk" "link area" "network kontak";
+            }
+
+            .footer-col:nth-child(1) {
+                grid-area: produk;
+            }
+
+            .footer-col:nth-child(2) {
+                grid-area: link;
+            }
+
+            .footer-col:nth-child(3) {
+                grid-area: area;
+            }
+
+            .footer-col:nth-child(4) {
+                grid-area: network;
+            }
+
+            .footer-col:nth-child(5) {
+                grid-area: kontak;
+            }
+        }
+
+        @media (min-width: 768px) {
+            header {
+                padding: 15px 40px;
+            }
+
+            nav {
+                display: flex !important;
+                position: static !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                gap: 25px;
+            }
+
+            nav a {
+                font-size: 16px;
+                width: auto !important;
+                padding: 0 !important;
+                border-bottom: none !important;
+            }
+
+            nav .btn-primary {
+                padding: 10px 25px !important;
+                margin-top: 0 !important;
+                width: auto !important;
+                margin-left: 10px;
+            }
+
+            .hero {
+                padding: 120px 60px;
+            }
+
+            .hero h2 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .search-box {
+                flex-direction: row;
+                padding: 15px;
+                gap: 10px;
+            }
+
+            .section {
+                padding: 80px 60px;
+            }
+
+            .section h2 {
+                font-size: 36px;
+            }
+
+            .listing {
+                gap: 30px;
+            }
+
+            .cta {
+                padding: 80px 60px;
+                border-radius: 60px 60px 0 0;
+            }
+
+            .cta h2 {
+                font-size: 40px;
+            }
+
+            .cta p {
+                font-size: 20px;
+            }
+
+            .cta a {
+                padding: 15px 40px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .stats-main,
+            .stats-features,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-main .stat-box:nth-child(5) {
+                grid-column: 1;
+                width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-areas: "produk" "link" "area" "network" "kontak";
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>RukoMalang</h1>
+        <label for="nav-toggle" class="nav-toggle-btn">☰</label>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="ruko.html">Listing</a>
+            <a href="area.html">Area</a>
+            <a href="kontak.html">Kontak</a>
+            <a href="https://wa.me/62895639068080?text=Halo%20Admin%20RukoMalang,%20saya%20tertarik%20untuk%20memasang%20iklan%20properti%20ruko%20saya"
+                target="_blank" class="btn-primary">
+                Pasang Iklan
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Jual & Sewa Ruko Strategis di Malang</h2>
+        <p>Lokasi premium, harga kompetitif, siap untuk berbagai jenis usaha.</p>
+
+        <div class="search-box">
+            <select id="lokasi">
+                <option value="" disabled selected hidden>Pilih Lokasi</option>
+                <option value="suhat">Soekarno Hatta</option>
+                <option value="dinoyo">Dinoyo</option>
+                <option value="lowokwaru">Lowokwaru</option>
+                <option value="sawojajar">Sawojajar</option>
+                <option value="ijen">Ijen / Klojen</option>
+            </select>
+
+            <select id="tipe">
+                <option value="" disabled selected hidden>Jual / Sewa</option>
+                <option value="jual">Jual</option>
+                <option value="sewa">Sewa</option>
+            </select>
+
+            <button onclick="cariRuko()">Cari Ruko</button>
+        </div>
+    </section>
+
+    <script>
+        function cariRuko() {
+            var lokasi = document.getElementById("lokasi").value;
+            var tipe = document.getElementById("tipe").value;
+
+            if (lokasi === "" || tipe === "") {
+                alert("Mohon lengkapi filter lokasi dan tipe transaksi terlebih dahulu.");
+                return;
+            }
+            window.location.href = `ruko.html?lokasi=${lokasi}&tipe=${tipe}`;
+        }
+    </script>
+    <section class="stats-main">
+        <div class="stat-box">
+            <h3>120+</h3>
+            <p>Ruko Tersedia</p>
+        </div>
+        <div class="stat-box">
+            <h3>15</h3>
+            <p>Area Strategis</p>
+        </div>
+        <div class="stat-box">
+            <h3>50+</h3>
+            <p>Klien Puas</p>
+        </div>
+        <div class="stat-box">
+            <h3>4.9</h3>
+            <p>Rating</p>
+        </div>
+        <div class="stat-box">
+            <h3>7 Tahun</h3>
+            <p>Berpengalaman</p>
+        </div>
+    </section>
+    <section class="section">
+        <h2>Jelajahi Area Populer</h2>
+        <div class="listing">
+
+            <a href="area.html#suhat" class="area-card">
+                <img src="img/rumah1.jpg" alt="Soekarno Hatta" />
+                <div class="area-overlay">
+                    <h3>Soekarno Hatta</h3>
+                    <p>Pusat Bisnis & Kuliner <i class="fas fa-arrow-right"></i></p>
+                </div>
+            </a>
+
+            <a href="area.html#dinoyo" class="area-card">
+                <img src="img/rumah2.jpg" alt="Dinoyo" />
+                <div class="area-overlay">
+                    <h3>Dinoyo</h3>
+                    <p>Kawasan Kampus & Retail <i class="fas fa-arrow-right"></i></p>
+                </div>
+            </a>
+
+            <a href="area.html#ijen" class="area-card">
+                <img src="img/rumah1.jpg" alt="Ijen" />
+                <div class="area-overlay">
+                    <h3>Ijen & Klojen</h3>
+                    <p>Premium & Heritage <i class="fas fa-arrow-right"></i></p>
+                </div>
+            </a>
+
+            <a href="area.html#sawojajar" class="area-card">
+                <img src="img/rumah2.jpg" alt="Sawojajar" />
+                <div class="area-overlay">
+                    <h3>Sawojajar</h3>
+                    <p>Pemukiman & Daily Needs <i class="fas fa-arrow-right"></i></p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 30px;">Keunggulan Kami</h2>
+
+            <div class="stats-features">
+                <div class="stat-box">
+                    <i class="fas fa-map-location-dot"></i>
+                    <p>Lokasi Strategis</p>
+                </div>
+
+                <div class="stat-box">
+                    <i class="fas fa-shield-halved"></i>
+                    <p>Legalitas Aman</p>
+                </div>
+
+                <div class="stat-box">
+                    <i class="fas fa-tags"></i>
+                    <p>Harga Transparan</p>
+                </div>
+
+                <div class="stat-box">
+                    <i class="fas fa-headset"></i>
+                    <p>Konsultasi Gratis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta">
+        <h2>Butuh Ruko untuk Bisnis Anda?</h2>
+        <p>Konsultasi gratis & survey lokasi sekarang juga</p>
+        <a href="kontak.html">Hubungi Kami</a>
+    </section>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>RukoMalang</h4>
+                <p>Jual & sewa ruko strategis di Malang dan sekitarnya. Solusi properti komersial terpercaya sejak 2020.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="ruko.html">Listing Ruko</a></li>
+                    <li><a href="area.html">Area</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Area Populer</h4>
+                <ul>
+                    <li><a href="area.html#suhat">Soekarno Hatta</a></li>
+                    <li><a href="area.html#dinoyo">Dinoyo</a></li>
+                    <li><a href="area.html#sawojajar">Sawojajar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Network</h4>
+                <ul>
+                    <li><a href="#">Properti Malang</a></li>
+                    <li><a href="#">SewaKantor.id</a></li>
+                    <li><a href="#">RukoJawaTimur.com</a></li>
+                    <li><a href="#">Investasi Properti</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul>
+                    <li>📞 0895-6390-68080</li>
+                    <li>✉️ info@rukomalang.com</li>
+                    <li>📍 Jl. Veteran No. 10, Malang</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ruko Malang. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
