@@ -27,10 +27,13 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        html,
         body {
             background: var(--light);
             color: var(--dark);
-            line-height: 1.6;
+            line-height: 1.5;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         /* =========================================
@@ -38,7 +41,7 @@
            ========================================= */
         header {
             background: #fff;
-            padding: 15px 20px;
+            padding: 10px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,21 +52,21 @@
         }
 
         header h1 {
-            font-size: 20px;
+            font-size: 18px;
             color: var(--primary);
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         nav a {
             text-decoration: none;
             color: #555;
             font-weight: 500;
-            font-size: 15px;
+            font-size: 14px;
             transition: color 0.3s;
         }
 
@@ -78,6 +81,7 @@
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 14px;
             white-space: nowrap;
             transition: background 0.3s, transform 0.2s;
         }
@@ -87,50 +91,71 @@
             transform: translateY(-2px);
         }
 
-        /* ===== HERO ===== */
+        .nav-toggle,
+        .nav-toggle-btn {
+            display: none;
+        }
+
+        /* =========================================
+           3. HERO SECTION (LEBIH COMPACT)
+           ========================================= */
         .hero {
-            background: linear-gradient(120deg, rgba(15, 44, 89, 0.9), rgba(15, 44, 89, 0.6)),
-                url('https://images.unsplash.com/photo-1560448075-bb7c7b1cddc3') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(15, 44, 89, 0.85), rgba(15, 44, 89, 0.7)),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
             color: #fff;
-            padding: 100px 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 60vh;
+            padding: 80px 20px 100px;
             text-align: center;
+            position: relative;
         }
 
         .hero h2 {
-            font-size: 2.5rem;
-            max-width: 800px;
-            margin: 0 auto 20px;
+            font-size: 2.4rem;
+            max-width: 700px;
+            margin: 0 auto 10px;
             line-height: 1.2;
+            font-weight: 700;
         }
 
         .hero p {
-            margin: 15px auto;
-            font-size: 1.1rem;
+            margin: 0 auto 25px;
+            font-size: 1rem;
             max-width: 600px;
+            opacity: 0.9;
         }
 
         .search-box {
             background: #fff;
-            padding: 15px;
-            border-radius: 15px;
+            padding: 6px;
+            border-radius: 50px;
             display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 700px;
-            margin: 25px auto 0;
-        }
-
-        .search-box select,
-        .search-box button {
-            padding: 12px;
-            border-radius: 10px;
-            border: none;
-            font-size: 1rem;
+            gap: 8px;
             width: 100%;
+            max-width: 500px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
         .search-box select {
-            background: #f1f1f1;
+            flex: 1;
+            padding: 10px 20px;
+            border-radius: 40px;
+            border: 1px solid #eee;
+            font-size: 0.9rem;
+            background: #fff;
+            outline: none;
+            cursor: pointer;
+            color: #333;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 10px;
         }
 
         .search-box button {
@@ -139,19 +164,133 @@
             font-weight: 600;
             cursor: pointer;
             transition: background 0.3s;
+            padding: 10px 30px;
+            border-radius: 40px;
+            border: none;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         .search-box button:hover {
             background: #e08a15;
         }
 
-        /* ===== STATS & FEATURES ===== */
+        /* =========================================
+           4. PROMO SLIDER (FLOATING STYLE)
+           ========================================= */
+        .promo-section {
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            padding: 0 20px;
+            margin-bottom: 40px;
+        }
+
+        .slider-container {
+            /* PERUBAHAN DI SINI: DARI 1000px JADI 1200px */
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            background: #fff;
+            position: relative;
+            /* Aspect ratio dipertahankan agar tidak terlalu tinggi */
+            aspect-ratio: 16/5;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 30px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            color: #fff;
+            text-align: left;
+        }
+
+        .slide-content h3 {
+            font-size: 22px;
+            margin-bottom: 2px;
+            color: var(--secondary);
+        }
+
+        .slide-content p {
+            font-size: 14px;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 15px;
+            right: 30px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-dot.active {
+            background: var(--secondary);
+            transform: scale(1.2);
+        }
+
+        /* =========================================
+           5. OTHER SECTIONS (Stats, Area, Footer)
+           ========================================= */
+        .stats-main {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .stat-box {
             background: #fff;
-            padding: 24px 10px;
-            border-radius: 20px;
+            padding: 20px 10px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.2s;
         }
 
@@ -160,75 +299,56 @@
         }
 
         .stat-box h3 {
-            font-size: 28px;
+            font-size: 24px;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
         .stat-box i {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             display: block;
         }
 
         .stat-box p {
-            font-size: 14px;
+            font-size: 13px;
             color: #555;
             font-weight: 500;
         }
 
-        .stats-main {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .stats-features {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* ===== SECTION STYLE ===== */
         .section {
-            padding: 60px 20px;
+            padding: 50px 20px;
         }
 
         .section h2 {
-            font-size: 28px;
+            font-size: 26px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: var(--primary);
         }
 
-        /* ===== AREA CARDS ===== */
         .listing {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            gap: 20px;
+            /* Ini referensi lebarnya, 1200px */
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .area-card {
             position: relative;
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
-            height: 300px;
+            height: 250px;
             text-decoration: none;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
         .area-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
         }
 
         .area-card img {
@@ -248,18 +368,18 @@
             left: 0;
             width: 100%;
             background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
-            padding: 30px 20px;
+            padding: 20px;
             color: #fff;
         }
 
         .area-overlay h3 {
-            font-size: 24px;
-            margin-bottom: 5px;
+            font-size: 20px;
+            margin-bottom: 3px;
             color: #fff;
         }
 
         .area-overlay p {
-            font-size: 14px;
+            font-size: 13px;
             opacity: 0.9;
             color: #ddd;
         }
@@ -273,37 +393,36 @@
             margin-left: 10px;
         }
 
-        /* ===== CTA ===== */
         .cta {
             background: linear-gradient(120deg, var(--primary), #183d7a);
             color: #fff;
-            padding: 60px 20px;
+            padding: 50px 20px;
             text-align: center;
-            border-radius: 40px 40px 0 0;
+            border-radius: 30px 30px 0 0;
             margin-bottom: 0;
         }
 
         .cta h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
         .cta p {
-            font-size: 18px;
+            font-size: 16px;
             max-width: 600px;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
         }
 
         .cta a {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 15px;
             background: var(--secondary);
-            padding: 14px 36px;
-            border-radius: 40px;
+            padding: 12px 30px;
+            border-radius: 30px;
             color: #fff;
             font-weight: 700;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             transition: background 0.3s;
         }
 
@@ -311,75 +430,76 @@
             background: #e08a15;
         }
 
-        /* ===== FOOTER ===== */
         footer {
             background: #0a1f3f;
             color: #b0c0d8;
-            padding: 50px 20px 20px;
+            padding: 40px 20px 20px;
         }
 
         .footer-col h4 {
             color: #ff9f1c;
-            margin-bottom: 16px;
-            font-size: 18px;
+            margin-bottom: 12px;
+            font-size: 16px;
             font-weight: 600;
         }
 
         .footer-col p {
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.6;
-            color: #b0c0d8;
             margin: 0;
         }
 
         .footer-col ul {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
 
         .footer-col ul li {
-            margin: 8px 0;
-            font-size: 14px;
+            margin: 6px 0;
+            font-size: 13px;
         }
 
         .footer-col ul li a {
             color: #b0c0d8;
             text-decoration: none;
             transition: color 0.2s;
-            display: inline-block;
         }
 
         .footer-col ul li a:hover {
             color: #ff9f1c;
         }
 
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 40px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid #1d2f50;
-            text-align: center;
-            font-size: 14px;
-            color: #8a9bbd;
-        }
-
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 30px;
+            gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
             text-align: left;
         }
 
-        /* ===== RESPONSIVE ===== */
-        .nav-toggle,
-        .nav-toggle-btn {
-            display: none;
+        .footer-bottom {
+            border-top: 1px solid #1d2f50;
+            text-align: center;
+            padding-top: 15px;
+            margin-top: 30px;
+            font-size: 13px;
+        }
+
+        /* =========================================
+           6. RESPONSIVE
+           ========================================= */
+        @media (max-width: 992px) {
+            .slider-container {
+                aspect-ratio: 16/7;
+            }
         }
 
         @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+            }
+
             .nav-toggle-btn {
                 display: block;
                 font-size: 24px;
@@ -389,79 +509,105 @@
             }
 
             nav {
+                display: none;
                 position: absolute;
-                top: 70px;
+                top: 60px;
                 left: 0;
                 width: 100%;
                 background: #fff;
                 flex-direction: column;
-                align-items: flex-start;
                 padding: 20px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                display: none;
                 z-index: 99;
-            }
-
-            nav a {
-                width: 100%;
-                padding: 10px 0;
-                font-size: 16px;
-                border-bottom: 1px solid #eee;
-            }
-
-            nav a:last-child {
-                border-bottom: none;
-            }
-
-            .btn-primary {
-                display: inline-block;
-                width: auto;
-                margin-top: 10px;
-                padding: 10px 25px;
             }
 
             .nav-toggle:checked~nav {
                 display: flex;
             }
 
+            nav a {
+                width: 100%;
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav .btn-primary {
+                margin-top: 15px;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* HERO MOBILE: Lebih pendek lagi */
+            .hero {
+                min-height: 50vh;
+                padding-top: 60px;
+                padding-bottom: 80px;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+                gap: 8px;
+                padding: 12px;
+                border-radius: 15px;
+                max-width: 100%;
+            }
+
+            .search-box select,
+            .search-box button {
+                width: 100%;
+            }
+
+            /* Slider Mobile */
+            .slider-container {
+                aspect-ratio: 16/9;
+                border-radius: 15px;
+            }
+
+            /* Persegi panjang di HP agar tidak terlalu tinggi */
+            .slide-content {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .slide-content h3 {
+                font-size: 16px;
+            }
+
+            .slide-content p {
+                font-size: 12px;
+            }
+
+            .slider-nav {
+                right: 50%;
+                transform: translateX(50%);
+                bottom: 10px;
+            }
+
             .stats-main,
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 16px;
+                gap: 12px;
             }
 
             .stats-main .stat-box:nth-child(5) {
                 grid-column: 1 / -1;
-                justify-self: center;
-                width: calc(50% - 8px);
+                width: 100%;
             }
 
             .stats-features {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr 1fr;
             }
 
             .footer-grid {
-                grid-template-areas: "produk" "link area" "network kontak";
-            }
-
-            .footer-col:nth-child(1) {
-                grid-area: produk;
-            }
-
-            .footer-col:nth-child(2) {
-                grid-area: link;
-            }
-
-            .footer-col:nth-child(3) {
-                grid-area: area;
-            }
-
-            .footer-col:nth-child(4) {
-                grid-area: network;
-            }
-
-            .footer-col:nth-child(5) {
-                grid-area: kontak;
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -482,7 +628,6 @@
             }
 
             nav a {
-                font-size: 16px;
                 width: auto !important;
                 padding: 0 !important;
                 border-bottom: none !important;
@@ -494,77 +639,22 @@
                 width: auto !important;
                 margin-left: 10px;
             }
-
-            .hero {
-                padding: 120px 60px;
-            }
-
-            .hero h2 {
-                font-size: 48px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .search-box {
-                flex-direction: row;
-                padding: 15px;
-                gap: 10px;
-            }
-
-            .section {
-                padding: 80px 60px;
-            }
-
-            .section h2 {
-                font-size: 36px;
-            }
-
-            .listing {
-                gap: 30px;
-            }
-
-            .cta {
-                padding: 80px 60px;
-                border-radius: 60px 60px 0 0;
-            }
-
-            .cta h2 {
-                font-size: 40px;
-            }
-
-            .cta p {
-                font-size: 20px;
-            }
-
-            .cta a {
-                padding: 15px 40px;
-                font-size: 20px;
-            }
         }
 
         @media (max-width: 480px) {
-
-            .stats-main,
-            .stats-features,
             .footer-grid {
                 grid-template-columns: 1fr;
             }
 
-            .stats-main .stat-box:nth-child(5) {
-                grid-column: 1;
-                width: 100%;
-            }
-
-            .footer-grid {
-                grid-template-areas: "produk" "link" "area" "network" "kontak";
+            .hero {
+                min-height: 55vh;
             }
         }
     </style>
 </head>
 
 <body>
+
     <header>
         <h1>RukoMalang</h1>
         <label for="nav-toggle" class="nav-toggle-btn">☰</label>
@@ -573,11 +663,10 @@
             <a href="index.html">Beranda</a>
             <a href="ruko.html">Listing</a>
             <a href="area.html">Area</a>
-            <a href="blog.html">Blog</a> <a href="kontak.html">Kontak</a>
+            <a href="blog.html">Blog</a>
+            <a href="kontak.html">Kontak</a>
             <a href="https://wa.me/62895639068080?text=Halo%20Admin%20RukoMalang,%20saya%20tertarik%20untuk%20memasang%20iklan%20properti%20ruko%20saya"
-                target="_blank" class="btn-primary">
-                Pasang Iklan
-            </a>
+                target="_blank" class="btn-primary">Pasang Iklan</a>
         </nav>
     </header>
 
@@ -594,57 +683,90 @@
                 <option value="sawojajar">Sawojajar</option>
                 <option value="ijen">Ijen / Klojen</option>
             </select>
+            <button onclick="cariRuko()">Cari Ruko <i class="fas fa-search"></i></button>
+        </div>
+    </section>
 
-            <select id="tipe">
-                <option value="" disabled selected hidden>Jual / Sewa</option>
-                <option value="jual">Jual</option>
-                <option value="sewa">Sewa</option>
-            </select>
+    <section class="promo-section">
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
 
-            <button onclick="cariRuko()">Cari Ruko</button>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1577412647305-991150c7d163?q=80&w=1200&auto=format&fit=crop"
+                        alt="Promo Ruko">
+                    <div class="slide-content">
+                        <h3>Promo Awal Tahun 2026</h3>
+                        <p>Dapatkan diskon sewa hingga 10% untuk ruko di kawasan Dinoyo.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
+                        alt="Ruko Bisnis">
+                    <div class="slide-content">
+                        <h3>Listing Baru: Suhat Premium</h3>
+                        <p>Ruko 3 lantai nol jalan raya, cocok untuk kantor & cafe.</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop"
+                        alt="Investasi">
+                    <div class="slide-content">
+                        <h3>Investasi Cerdas</h3>
+                        <p>Konsultasi gratis ROI properti komersial bersama tim ahli kami.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="slider-nav">
+                <div class="nav-dot active" onclick="goToSlide(0)"></div>
+                <div class="nav-dot" onclick="goToSlide(1)"></div>
+                <div class="nav-dot" onclick="goToSlide(2)"></div>
+            </div>
         </div>
     </section>
 
     <script>
         function cariRuko() {
             var lokasi = document.getElementById("lokasi").value;
-            var tipe = document.getElementById("tipe").value;
-
-            if (lokasi === "" || tipe === "") {
-                alert("Mohon lengkapi filter lokasi dan tipe transaksi terlebih dahulu.");
+            if (lokasi === "") {
+                alert("Mohon pilih lokasi terlebih dahulu.");
                 return;
             }
-            window.location.href = `ruko.html?lokasi=${lokasi}&tipe=${tipe}`;
+            window.location.href = `ruko.html?lokasi=${lokasi}`;
         }
-    </script>
 
-    <section class="stats-main">
-        <div class="stat-box">
-            <h3>120+</h3>
-            <p>Ruko Tersedia</p>
-        </div>
-        <div class="stat-box">
-            <h3>15</h3>
-            <p>Area Strategis</p>
-        </div>
-        <div class="stat-box">
-            <h3>50+</h3>
-            <p>Klien Puas</p>
-        </div>
-        <div class="stat-box">
-            <h3>4.9</h3>
-            <p>Rating</p>
-        </div>
-        <div class="stat-box">
-            <h3>7 Tahun</h3>
-            <p>Berpengalaman</p>
-        </div>
-    </section>
+        // Script Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        const wrapper = document.getElementById('sliderWrapper');
+        const totalSlides = slides.length;
+
+        function updateSlider() {
+            wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        setInterval(nextSlide, 4000);
+    </script>
 
     <section class="section">
         <h2>Jelajahi Area Populer</h2>
         <div class="listing">
-
             <a href="area.html#suhat" class="area-card">
                 <img src="img/rumah1.jpg" alt="Soekarno Hatta"
                     onerror="this.src='https://images.unsplash.com/photo-1568605114967-8130f3a36994'" />
@@ -653,7 +775,6 @@
                     <p>Pusat Bisnis & Kuliner <i class="fas fa-arrow-right"></i></p>
                 </div>
             </a>
-
             <a href="area.html#dinoyo" class="area-card">
                 <img src="img/rumah2.jpg" alt="Dinoyo"
                     onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c'" />
@@ -662,7 +783,6 @@
                     <p>Kawasan Kampus & Retail <i class="fas fa-arrow-right"></i></p>
                 </div>
             </a>
-
             <a href="area.html#ijen" class="area-card">
                 <img src="img/rumah1.jpg" alt="Ijen"
                     onerror="this.src='https://images.unsplash.com/photo-1460317442991-0ec12438a906'" />
@@ -671,7 +791,6 @@
                     <p>Premium & Heritage <i class="fas fa-arrow-right"></i></p>
                 </div>
             </a>
-
             <a href="area.html#sawojajar" class="area-card">
                 <img src="img/rumah2.jpg" alt="Sawojajar"
                     onerror="this.src='https://images.unsplash.com/photo-1572120360610-d971b9b78825'" />
@@ -680,30 +799,25 @@
                     <p>Pemukiman & Daily Needs <i class="fas fa-arrow-right"></i></p>
                 </div>
             </a>
-
         </div>
     </section>
 
     <section class="section">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 30px;">Keunggulan Kami</h2>
-
             <div class="stats-features">
                 <div class="stat-box">
                     <i class="fas fa-map-location-dot"></i>
                     <p>Lokasi Strategis</p>
                 </div>
-
                 <div class="stat-box">
                     <i class="fas fa-shield-halved"></i>
                     <p>Legalitas Aman</p>
                 </div>
-
                 <div class="stat-box">
                     <i class="fas fa-tags"></i>
                     <p>Harga Transparan</p>
                 </div>
-
                 <div class="stat-box">
                     <i class="fas fa-headset"></i>
                     <p>Konsultasi Gratis</p>
@@ -761,7 +875,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 Ruko Malang. All Rights Reserved.</p>
         </div>

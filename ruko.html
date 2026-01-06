@@ -28,10 +28,13 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        html,
         body {
             background: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         /* =========================================
@@ -39,7 +42,7 @@
            ========================================= */
         header {
             background: #fff;
-            padding: 15px 40px;
+            padding: 10px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -50,21 +53,21 @@
         }
 
         header h1 {
-            font-size: 20px;
+            font-size: 18px;
             color: var(--primary);
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
 
         nav a {
             text-decoration: none;
             color: #555;
             font-weight: 500;
-            font-size: 15px;
+            font-size: 14px;
             transition: color 0.3s;
         }
 
@@ -75,10 +78,11 @@
         .btn-primary {
             background: var(--secondary);
             color: #fff !important;
-            padding: 10px 25px;
+            padding: 8px 20px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 14px;
             white-space: nowrap;
             transition: background 0.3s, transform 0.2s;
         }
@@ -122,7 +126,9 @@
             padding: 0 20px;
             display: grid;
             grid-template-columns: 280px 1fr;
+            /* Sidebar Kiri, Konten Kanan */
             gap: 40px;
+            align-items: start;
         }
 
         /* --- Sidebar Styles --- */
@@ -132,6 +138,34 @@
             border-radius: 15px;
             height: fit-content;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Tombol Toggle Filter (Hanya muncul di Mobile) */
+        .btn-filter-toggle {
+            display: none;
+            /* Default hidden di desktop */
+            width: 100%;
+            padding: 12px;
+            background: #fff;
+            color: var(--primary);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 20px;
+            text-align: left;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .btn-filter-toggle i {
+            margin-right: 8px;
+            color: var(--secondary);
+        }
+
+        .btn-filter-toggle:hover {
+            background: #f9f9f9;
+            border-color: var(--secondary);
         }
 
         .filter-group {
@@ -148,33 +182,36 @@
             font-size: 16px;
             font-weight: 600;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             display: block;
         }
 
-        .filter-option {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
+        /* Styling Dropdown Sidebar Baru */
+        .sidebar select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
             font-size: 14px;
             color: #555;
+            background: #f9f9f9;
             cursor: pointer;
-            transition: color 0.2s;
+            transition: 0.3s;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23555%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 10px;
         }
 
-        .filter-option:hover {
-            color: var(--secondary);
+        .sidebar select:focus {
+            border-color: var(--secondary);
+            background: #fff;
+            box-shadow: 0 0 0 2px rgba(255, 159, 28, 0.1);
         }
 
-        .filter-option input {
-            margin-right: 10px;
-            accent-color: var(--secondary);
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
-        /* --- LISTING HEADER (SEARCH & SORT) --- */
+        /* --- LISTING HEADER (SORT ONLY) --- */
         .listing-header {
             display: flex;
             justify-content: space-between;
@@ -189,38 +226,9 @@
             color: #555;
         }
 
-        .listing-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .search-inline {
-            display: flex;
-            align-items: center;
-            background: #fff;
-            border: 1px solid #ddd;
-            padding: 8px 15px;
-            border-radius: 50px;
-            transition: border 0.3s;
-        }
-
-        .search-inline:focus-within {
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(255, 159, 28, 0.1);
-        }
-
-        .search-inline input {
-            border: none;
-            outline: none;
-            font-size: 14px;
-            margin-left: 8px;
-            color: #333;
-            width: 180px;
-        }
-
+        /* Sort Box */
         .sort-box select {
-            padding: 10px 15px;
+            padding: 10px 20px;
             border-radius: 50px;
             border: 1px solid #ddd;
             background: #fff;
@@ -248,6 +256,8 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .card.hidden {
@@ -266,6 +276,9 @@
 
         .card-body {
             padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .badge {
@@ -278,6 +291,7 @@
             margin-bottom: 10px;
             text-transform: uppercase;
             font-weight: 600;
+            width: fit-content;
         }
 
         .badge.sewa {
@@ -288,6 +302,7 @@
             font-size: 18px;
             margin-bottom: 5px;
             color: var(--dark);
+            line-height: 1.3;
         }
 
         .card .location {
@@ -314,6 +329,7 @@
             padding-top: 12px;
             font-size: 13px;
             color: #666;
+            margin-top: auto;
         }
 
         .card-specs span i {
@@ -325,20 +341,21 @@
         footer {
             background: #0a1f3f;
             color: #b0c0d8;
-            padding: 50px 20px 20px;
+            padding: 40px 20px 20px;
             margin-top: 60px;
         }
 
         .footer-col h4 {
             color: #ff9f1c;
-            margin-bottom: 16px;
-            font-size: 18px;
+            margin-bottom: 12px;
+            font-size: 16px;
             font-weight: 600;
         }
 
         .footer-col p {
-            font-size: 14px;
+            font-size: 13px;
             margin: 0;
+            line-height: 1.6;
         }
 
         .footer-col ul {
@@ -347,8 +364,8 @@
         }
 
         .footer-col ul li {
-            margin: 8px 0;
-            font-size: 14px;
+            margin: 6px 0;
+            font-size: 13px;
         }
 
         .footer-col ul li a {
@@ -364,7 +381,7 @@
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 30px;
+            gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -372,78 +389,128 @@
         .footer-bottom {
             border-top: 1px solid #1d2f50;
             text-align: center;
-            padding-top: 20px;
-            margin-top: 40px;
-            font-size: 14px;
+            padding-top: 15px;
+            margin-top: 30px;
+            font-size: 13px;
         }
 
-        /* Responsive */
+        /* =========================================
+           5. RESPONSIVE QUERIES
+           ========================================= */
+
         @media (max-width: 992px) {
             .listing-container {
                 grid-template-columns: 1fr;
+                /* Jadi 1 kolom */
+                gap: 20px;
             }
 
+            /* LOGIKA TOGGLE SIDEBAR MOBILE */
             .sidebar {
-                margin-bottom: 30px;
+                display: none;
+                /* Sembunyikan filter secara default */
+                margin-bottom: 20px;
             }
 
-            .listing-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .sidebar.active {
+                display: block;
+                /* Tampilkan jika class active ada */
+                animation: fadeIn 0.3s ease;
+            }
+
+            .btn-filter-toggle {
+                display: flex;
+                /* Tampilkan tombol toggle */
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 15px 20px;
+                padding: 10px 20px;
             }
 
             .nav-toggle-btn {
                 display: block;
                 font-size: 24px;
                 cursor: pointer;
+                color: var(--dark);
+                margin-left: 15px;
             }
 
             nav {
                 display: none;
                 position: absolute;
-                top: 70px;
+                top: 60px;
                 left: 0;
                 width: 100%;
                 background: #fff;
                 flex-direction: column;
                 padding: 20px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 99;
             }
 
             .nav-toggle:checked~nav {
                 display: flex;
             }
 
+            nav a {
+                width: 100%;
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav .btn-primary {
+                margin-top: 15px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .listing-container {
+                margin: 20px auto;
+                gap: 20px;
+                padding: 0 15px;
+            }
+
+            .listing-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+
+            /* Sort box full width di mobile agar rapi */
+            .sort-box {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .sort-box select {
+                width: 100%;
+            }
+
             .listing-grid {
                 grid-template-columns: 1fr;
             }
 
+            /* 1 Kolom kartu */
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
-            }
-
-            .listing-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .listing-actions {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .search-inline {
-                flex: 1;
-            }
-
-            .search-inline input {
-                width: 100%;
+                gap: 20px;
             }
         }
 
@@ -465,7 +532,8 @@
             <a href="index.html">Beranda</a>
             <a href="ruko.html" style="color: var(--secondary);">Listing</a>
             <a href="area.html">Area</a>
-            <a href="blog.html">Blog</a> <a href="kontak.html">Kontak</a>
+            <a href="blog.html">Blog</a>
+            <a href="kontak.html">Kontak</a>
             <a href="https://wa.me/62895639068080?text=Halo%20Admin%20RukoMalang,%20saya%20tertarik%20untuk%20memasang%20iklan%20properti%20ruko%20saya"
                 target="_blank" class="btn-primary">Pasang Iklan</a>
         </nav>
@@ -478,62 +546,46 @@
 
     <section class="listing-container">
 
-        <aside class="sidebar">
-            <h3 style="margin-bottom: 20px; color: var(--primary);">Filter Pencarian</h3>
+        <button class="btn-filter-toggle" onclick="toggleSidebar()">
+            <span><i class="fas fa-filter"></i> Filter Pencarian</span>
+            <i class="fas fa-chevron-down" id="filterIcon"></i>
+        </button>
+
+        <aside class="sidebar" id="filterSidebar">
+            <h3 style="margin-bottom: 20px; color: var(--primary);">Filter</h3>
 
             <div class="filter-group">
                 <span class="filter-title">Lokasi</span>
-                <label class="filter-option">
-                    <input type="checkbox" id="chk-all" value="all" checked onchange="handleLocationChange(this)"> Semua
-                    Area
-                </label>
-                <label class="filter-option">
-                    <input type="checkbox" id="chk-suhat" value="suhat" onchange="handleLocationChange(this)"> Soekarno
-                    Hatta
-                </label>
-                <label class="filter-option">
-                    <input type="checkbox" id="chk-dinoyo" value="dinoyo" onchange="handleLocationChange(this)"> Dinoyo
-                    / MT Haryono
-                </label>
-                <label class="filter-option">
-                    <input type="checkbox" id="chk-ijen" value="ijen" onchange="handleLocationChange(this)"> Ijen /
-                    Klojen
-                </label>
-                <label class="filter-option">
-                    <input type="checkbox" id="chk-sawojajar" value="sawojajar" onchange="handleLocationChange(this)">
-                    Sawojajar
-                </label>
+                <select id="filterLokasi" onchange="filterListings()">
+                    <option value="all">Semua Area</option>
+                    <option value="suhat">Soekarno Hatta</option>
+                    <option value="dinoyo">Dinoyo / MT Haryono</option>
+                    <option value="ijen">Ijen / Klojen</option>
+                    <option value="sawojajar">Sawojajar</option>
+                    <option value="blimbing">Blimbing</option>
+                </select>
             </div>
 
             <div class="filter-group" style="border-bottom: none;">
                 <span class="filter-title">Tipe Transaksi</span>
-                <label class="filter-option">
-                    <input type="checkbox" id="chk-jual" value="jual" checked onchange="filterListings()"> Dijual
-                </label>
-                <label class="filter-option">
-                    <input type="checkbox" id="chk-sewa" value="sewa" checked onchange="filterListings()"> Disewa
-                </label>
+                <select id="filterTipe" onchange="filterListings()">
+                    <option value="all">Semua Tipe</option>
+                    <option value="jual">Dijual</option>
+                    <option value="sewa">Disewa</option>
+                </select>
             </div>
         </aside>
 
         <main>
             <div class="listing-header">
-                <p class="listing-count">Menampilkan hasil pencarian ruko</p>
+                <p class="listing-count">Menampilkan hasil:</p>
 
-                <div class="listing-actions">
-                    <div class="search-inline">
-                        <i class="fas fa-search" style="color: #999;"></i>
-                        <input type="text" id="listingSearchInput" placeholder="Cari nama ruko..."
-                            onkeyup="filterListings()">
-                    </div>
-
-                    <div class="sort-box">
-                        <select id="sortSelect" onchange="sortListings()">
-                            <option value="default">Terbaru</option>
-                            <option value="low">Harga Terendah</option>
-                            <option value="high">Harga Tertinggi</option>
-                        </select>
-                    </div>
+                <div class="sort-box">
+                    <select id="sortSelect" onchange="sortListings()">
+                        <option value="default">Urutkan: Terbaru</option>
+                        <option value="low">Harga Terendah</option>
+                        <option value="high">Harga Tertinggi</option>
+                    </select>
                 </div>
             </div>
 
@@ -541,7 +593,6 @@
 
                 <div class="card" data-index="1" data-harga="850000000" data-lokasi="suhat" data-tipe="jual"
                     onclick="window.location.href='detail-ruko-suhat.html'" style="cursor: pointer;">
-
                     <img src="img/rumah1.jpg" alt="Ruko Suhat"
                         onerror="this.src='https://images.unsplash.com/photo-1568605114967-8130f3a36994'" />
                     <div class="card-body">
@@ -559,7 +610,6 @@
 
                 <div class="card" data-index="2" data-harga="60000000" data-lokasi="dinoyo" data-tipe="sewa"
                     onclick="window.location.href='detail-ruko-dinoyo.html'" style="cursor: pointer;">
-
                     <img src="img/rumah2.jpg" alt="Ruko Dinoyo"
                         onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c'" />
                     <div class="card-body">
@@ -577,7 +627,6 @@
 
                 <div class="card" data-index="3" data-harga="1500000000" data-lokasi="sawojajar" data-tipe="jual"
                     onclick="window.location.href='detail-ruko-sawojajar.html'" style="cursor: pointer;">
-
                     <img src="img/rumah3.jpg" alt="Ruko Hook Sawojajar"
                         onerror="this.src='https://images.unsplash.com/photo-1572120360610-d971b9b78825'" />
                     <div class="card-body">
@@ -595,7 +644,6 @@
 
                 <div class="card" data-index="4" data-harga="120000000" data-lokasi="ijen" data-tipe="sewa"
                     onclick="window.location.href='detail-ruko-kayutangan.html'" style="cursor: pointer;">
-
                     <img src="img/rumah1.jpg" alt="Kios Kayutangan"
                         onerror="this.src='https://images.unsplash.com/photo-1582407947304-fd86f028f716'" />
                     <div class="card-body">
@@ -613,7 +661,6 @@
 
                 <div class="card" data-index="5" data-harga="3200000000" data-lokasi="ijen" data-tipe="jual"
                     onclick="window.location.href='detail-ruko-ijen.html'" style="cursor: pointer;">
-
                     <img src="img/rumah2.jpg" alt="Ruko Ijen"
                         onerror="this.src='https://images.unsplash.com/photo-1460317442991-0ec12438a906'" />
                     <div class="card-body">
@@ -631,7 +678,6 @@
 
                 <div class="card" data-index="6" data-harga="950000000" data-lokasi="blimbing" data-tipe="jual"
                     onclick="window.location.href='detail-ruko-blimbing.html'" style="cursor: pointer;">
-
                     <img src="img/rumah3.jpg" alt="Ruko Blimbing"
                         onerror="this.src='https://images.unsplash.com/photo-1570129477492-45c003edd2be'" />
                     <div class="card-body">
@@ -693,6 +739,7 @@
                 <ul>
                     <li>📞 0895-6390-68080</li>
                     <li>✉️ info@rukomalang.com</li>
+                    <li>📍 Jl. Veteran No. 10, Malang</li>
                 </ul>
             </div>
         </div>
@@ -703,82 +750,64 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // 1. Ambil Parameter dari URL (dari halaman Index)
+            // 1. Ambil Parameter dari URL
             const urlParams = new URLSearchParams(window.location.search);
             const lokasiParam = urlParams.get('lokasi');
             const tipeParam = urlParams.get('tipe');
 
-            // 2. Set Checkbox berdasarkan URL
+            // 2. Set Nilai Dropdown
             if (lokasiParam) {
-                document.getElementById('chk-all').checked = false;
-                const targetLoc = document.getElementById('chk-' + lokasiParam);
-                if (targetLoc) targetLoc.checked = true;
+                const lokasiDropdown = document.getElementById('filterLokasi');
+                if (lokasiDropdown.querySelector(`option[value="${lokasiParam}"]`)) {
+                    lokasiDropdown.value = lokasiParam;
+                }
             }
 
             if (tipeParam) {
-                document.getElementById('chk-jual').checked = false;
-                document.getElementById('chk-sewa').checked = false;
-                const targetType = document.getElementById('chk-' + tipeParam);
-                if (targetType) targetType.checked = true;
+                const tipeDropdown = document.getElementById('filterTipe');
+                if (tipeDropdown.querySelector(`option[value="${tipeParam}"]`)) {
+                    tipeDropdown.value = tipeParam;
+                }
             }
 
             // 3. Jalankan Filter Awal
             filterListings();
         });
 
-        // --- FUNGSI 1: CHECKBOX OTOMATIS ---
-        function handleLocationChange(checkbox) {
-            const allChk = document.getElementById('chk-all');
-            const specificIds = ['suhat', 'dinoyo', 'ijen', 'sawojajar'];
+        // --- FUNGSI TOGGLE SIDEBAR MOBILE ---
+        function toggleSidebar() {
+            var sidebar = document.getElementById("filterSidebar");
+            var icon = document.getElementById("filterIcon");
 
-            if (checkbox.id === 'chk-all') {
-                if (checkbox.checked) {
-                    specificIds.forEach(id => {
-                        document.getElementById('chk-' + id).checked = false;
-                    });
-                }
+            if (sidebar.classList.contains("active")) {
+                sidebar.classList.remove("active");
+                icon.classList.remove("fa-chevron-up");
+                icon.classList.add("fa-chevron-down");
             } else {
-                if (checkbox.checked) {
-                    allChk.checked = false;
-                } else {
-                    // Jika semua checkbox spesifik mati, nyalakan kembali "Semua Area"
-                    let isAnyChecked = specificIds.some(id => document.getElementById('chk-' + id).checked);
-                    if (!isAnyChecked) {
-                        allChk.checked = true;
-                    }
-                }
+                sidebar.classList.add("active");
+                icon.classList.remove("fa-chevron-down");
+                icon.classList.add("fa-chevron-up");
             }
-            filterListings();
         }
 
-        // --- FUNGSI 2: FILTER & SEARCH ---
+        // --- FUNGSI FILTER (UPDATED UNTUK DROPDOWN) ---
         function filterListings() {
             const cards = document.querySelectorAll('.card');
             let visibleCount = 0;
 
-            const keyword = document.getElementById('listingSearchInput').value.toLowerCase();
-
-            const isAllLocation = document.getElementById('chk-all').checked;
-            const checkedLocations = [];
-            ['suhat', 'dinoyo', 'ijen', 'sawojajar'].forEach(id => {
-                if (document.getElementById('chk-' + id).checked) checkedLocations.push(id);
-            });
-
-            const checkedTypes = [];
-            ['jual', 'sewa'].forEach(id => {
-                if (document.getElementById('chk-' + id).checked) checkedTypes.push(id);
-            });
+            // Ambil value dari Dropdown
+            const selectedLokasi = document.getElementById('filterLokasi').value;
+            const selectedTipe = document.getElementById('filterTipe').value;
 
             cards.forEach(card => {
                 const cardLokasi = card.getAttribute('data-lokasi');
                 const cardTipe = card.getAttribute('data-tipe');
-                const cardTitle = card.querySelector('h3').innerText.toLowerCase();
 
-                let locationMatch = isAllLocation || checkedLocations.includes(cardLokasi);
-                let typeMatch = checkedTypes.includes(cardTipe);
-                let keywordMatch = cardTitle.includes(keyword);
+                // Logika Filter: Jika "all" ATAU match dengan value
+                let locationMatch = (selectedLokasi === 'all') || (cardLokasi === selectedLokasi);
+                let typeMatch = (selectedTipe === 'all') || (cardTipe === selectedTipe);
 
-                if (locationMatch && typeMatch && keywordMatch) {
+                if (locationMatch && typeMatch) {
                     card.classList.remove('hidden');
                     visibleCount++;
                 } else {
@@ -794,36 +823,28 @@
             }
         }
 
-        // --- FUNGSI 3: SORTIR (BARU) ---
+        // --- FUNGSI SORTIR ---
         function sortListings() {
             const container = document.getElementById('listingGrid');
-            // Ambil semua elemen card, jadikan Array
             const cards = Array.from(container.getElementsByClassName('card'));
             const sortType = document.getElementById('sortSelect').value;
 
-            // Lakukan Sorting
             cards.sort((a, b) => {
-                // Ambil harga dari atribut data-harga
                 const priceA = parseInt(a.getAttribute('data-harga'));
                 const priceB = parseInt(b.getAttribute('data-harga'));
 
-                // Ambil index asli untuk opsi "Terbaru"
                 const indexA = parseInt(a.getAttribute('data-index'));
                 const indexB = parseInt(b.getAttribute('data-index'));
 
                 if (sortType === 'low') {
-                    // Harga Terendah (Ascending)
                     return priceA - priceB;
                 } else if (sortType === 'high') {
-                    // Harga Tertinggi (Descending)
                     return priceB - priceA;
                 } else {
-                    // Terbaru (Default Index)
                     return indexA - indexB;
                 }
             });
 
-            // Masukkan kembali kartu yang sudah diurutkan ke container
             cards.forEach(card => container.appendChild(card));
         }
     </script>
