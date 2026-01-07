@@ -46,9 +46,11 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
-        header h1 {
-            font-size: 20px;
-            color: var(--primary);
+        header .logo-link img {
+            max-height: 50px;
+            /* Mengatur tinggi logo agar proporsional */
+            width: auto;
+            display: block;
         }
 
         nav {
@@ -542,7 +544,9 @@
 <body>
 
     <header>
-        <h1>RukoMalang</h1>
+        <a href="index.html" class="logo-link">
+            <img src="img/logo.png" alt="Logo Ruko Malang">
+        </a>
         <nav>
             <a href="index.html">Beranda</a>
             <a href="ruko.html">Listing</a>
@@ -564,8 +568,7 @@
         </div>
 
         <figure>
-            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c" alt="Ilustrasi Pajak Properti"
-                class="featured-img">
+            <img src="img/artikel6.jpg" alt="Ilustrasi Pajak Properti" class="featured-img">
             <figcaption>Ilustrasi perhitungan pajak properti komersial yang wajib diketahui.</figcaption>
         </figure>
 
@@ -608,8 +611,7 @@
                 dari nilai total, tapi setelah dikurangi nilai bebas pajak.</p>
 
             <figure>
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3" alt="Menghitung Pajak Ruko"
-                    class="content-img">
+                <img src="img/6artikel.jpg" alt="Menghitung Pajak Ruko" class="content-img">
                 <figcaption>Simulasi perhitungan pajak menggunakan kalkulator properti.</figcaption>
             </figure>
 
@@ -683,21 +685,21 @@
         <h3>Artikel Terkait</h3>
         <div class="blog-grid">
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40" class="blog-img">
+                <img src="img/artikel2.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Panduan Lengkap Izin Usaha Ruko (OSS)</h4>
                     <a href="detail-artikel-2.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" class="blog-img">
+                <img src="img/artikel8.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Ruko vs Rumah: Mana Lebih Untung?</h4>
                     <a href="detail-artikel-8.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" class="blog-img">
+                <img src="img/artikel5.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Cara Cepat Menyewakan Ruko</h4>
                     <a href="detail-artikel-5.html" class="read-more-sm">Baca Selengkapnya</a>

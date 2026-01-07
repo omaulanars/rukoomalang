@@ -46,9 +46,11 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
-        header h1 {
-            font-size: 20px;
-            color: var(--primary);
+        header .logo-link img {
+            max-height: 50px;
+            /* Mengatur tinggi logo agar proporsional */
+            width: auto;
+            display: block;
         }
 
         nav {
@@ -593,7 +595,9 @@
 <body>
 
     <header>
-        <h1>RukoMalang</h1>
+        <a href="index.html" class="logo-link">
+            <img src="img/logo.png" alt="Logo Ruko Malang">
+        </a>
         <nav>
             <a href="index.html">Beranda</a>
             <a href="ruko.html">Listing</a>
@@ -623,8 +627,7 @@
         </div>
 
         <figure>
-            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" alt="Pemasaran Digital Ruko"
-                class="featured-img">
+            <img src="img/artikel5.jpg" alt="Pemasaran Digital Ruko" class="featured-img">
             <figcaption>Ilustrasi strategi pemasaran digital untuk properti komersial.</figcaption>
         </figure>
 
@@ -665,8 +668,7 @@
                 Raya. Ini jauh lebih efektif daripada postingan organik biasa.</p>
 
             <figure>
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Analisa Pemasaran Digital"
-                    class="content-img">
+                <img src="img/5artikel.jpg" alt="Analisa Pemasaran Digital" class="content-img">
                 <figcaption>Analisis data media sosial untuk menargetkan penyewa potensial.</figcaption>
             </figure>
 
@@ -735,21 +737,21 @@
         <h3>Artikel Terkait</h3>
         <div class="blog-grid">
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c" class="blog-img">
+                <img src="img/artikel6.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Memahami Pajak Jual Beli & Sewa Ruko</h4>
                     <a href="detail-artikel-6.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1581578731117-10d52143b0d8" class="blog-img">
+                <img src="img/artikel4.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Tips Renovasi Ruko Tua</h4>
                     <a href="detail-artikel-4.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa" class="blog-img">
+                <img src="img/artikel9.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Standar Keamanan Ruko</h4>
                     <a href="detail-artikel-9.html" class="read-more-sm">Baca Selengkapnya</a>

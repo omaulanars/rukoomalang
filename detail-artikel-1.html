@@ -46,9 +46,11 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
-        header h1 {
-            font-size: 20px;
-            color: var(--primary);
+        header .logo-link img {
+            max-height: 50px;
+            /* Mengatur tinggi logo agar proporsional */
+            width: auto;
+            display: block;
         }
 
         nav {
@@ -582,7 +584,9 @@
 <body>
 
     <header>
-        <h1>RukoMalang</h1>
+        <a href="index.html" class="logo-link">
+            <img src="img/logo.png" alt="Logo Ruko Malang">
+        </a>
         <nav>
             <a href="index.html">Beranda</a>
             <a href="ruko.html">Listing</a>
@@ -612,8 +616,7 @@
         </div>
 
         <figure>
-            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" alt="Tips Memilih Ruko Malang"
-                class="featured-img">
+            <img src="img/artikel1.jpg" alt="Tips Memilih Ruko Malang" class="featured-img">
             <figcaption>Ilustrasi ruko di kawasan strategis yang ramai pengunjung.</figcaption>
         </figure>
 
@@ -653,8 +656,7 @@
                 produk premium, kawasan perumahan elit di Sawojajar atau Ijen lebih cocok.</p>
 
             <figure>
-                <img src="https://images.unsplash.com/photo-1572120360610-d971b9b78825" alt="Analisis Lokasi Ruko"
-                    class="content-img">
+                <img src="img/1artikel.jpg" alt="Analisis Lokasi Ruko" class="content-img">
                 <figcaption>Salah satu contoh ruko di kawasan perumahan elit Sawojajar.</figcaption>
             </figure>
 
@@ -722,21 +724,21 @@
         <h3>Artikel Terkait</h3>
         <div class="blog-grid">
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd" class="blog-img">
+                <img src="img/artikel3.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Tren Properti Komersial Malang 2026</h4>
                     <a href="detail-artikel-3.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" class="blog-img">
+                <img src="img/artikel8.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Ruko vs Rumah: Mana Lebih Untung?</h4>
                     <a href="detail-artikel-8.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" class="blog-img">
+                <img src="img/artikel5.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Cara Cepat Menyewakan Ruko</h4>
                     <a href="detail-artikel-5.html" class="read-more-sm">Baca Selengkapnya</a>

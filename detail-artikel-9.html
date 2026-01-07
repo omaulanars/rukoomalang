@@ -46,9 +46,11 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
-        header h1 {
-            font-size: 20px;
-            color: var(--primary);
+        header .logo-link img {
+            max-height: 50px;
+            /* Mengatur tinggi logo agar proporsional */
+            width: auto;
+            display: block;
         }
 
         nav {
@@ -542,7 +544,9 @@
 <body>
 
     <header>
-        <h1>RukoMalang</h1>
+        <a href="index.html" class="logo-link">
+            <img src="img/logo.png" alt="Logo Ruko Malang">
+        </a>
         <nav>
             <a href="index.html">Beranda</a>
             <a href="ruko.html">Listing</a>
@@ -564,8 +568,7 @@
         </div>
 
         <figure>
-            <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa" alt="Sistem Keamanan Ruko"
-                class="featured-img">
+            <img src="img/artikel9.jpg" alt="Sistem Keamanan Ruko" class="featured-img">
             <figcaption>Sistem keamanan terintegrasi untuk perlindungan maksimal aset bisnis.</figcaption>
         </figure>
 
@@ -608,8 +611,7 @@
             </p>
 
             <figure>
-                <img src="https://images.unsplash.com/photo-1558002038-1091a1661116" alt="CCTV dan Keamanan Modern"
-                    class="content-img">
+                <img src="img/9artikel.jpg" alt="CCTV dan Keamanan Modern" class="content-img">
                 <figcaption>Penerapan CCTV dan rolling door berkualitas tinggi pada ruko modern.</figcaption>
             </figure>
 
@@ -680,21 +682,21 @@
         <h3>Artikel Terkait</h3>
         <div class="blog-grid">
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1581578731117-10d52143b0d8" class="blog-img">
+                <img src="img/artikel4.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Tips Renovasi Ruko Tua</h4>
                     <a href="detail-artikel-4.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c" class="blog-img">
+                <img src="img/artikel6.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Pajak Jual Beli & Sewa Ruko</h4>
                     <a href="detail-artikel-6.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" class="blog-img">
+                <img src="img/artikel7.jpg" class="blog-img">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Inspirasi Layout Kantor Startup</h4>
                     <a href="detail-artikel-7.html" class="read-more-sm">Baca Selengkapnya</a>

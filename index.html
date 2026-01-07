@@ -51,9 +51,12 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
-        header h1 {
-            font-size: 18px;
-            color: var(--primary);
+        /* Update: Style untuk Logo Gambar */
+        header .logo-link img {
+            max-height: 50px;
+            /* Mengatur tinggi logo agar proporsional */
+            width: auto;
+            display: block;
         }
 
         nav {
@@ -115,7 +118,8 @@
             position: relative;
         }
 
-        .hero h2 {
+        /* Update: Selector diganti jadi h1 */
+        .hero h1 {
             font-size: 2.8rem;
             max-width: 800px;
             margin: 0 auto 10px;
@@ -195,20 +199,36 @@
             background: #fff;
             position: relative;
             aspect-ratio: 16/5;
-            /* Aspect ratio untuk slider atas */
         }
 
+        /* --- UPDATE UNTUK SCROLLING & DRAGGING --- */
         .slider-wrapper {
             display: flex;
             width: 100%;
             height: 100%;
-            transition: transform 0.5s ease-in-out;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            cursor: grab;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .slider-wrapper.dragging {
+            cursor: grabbing;
+            scroll-behavior: auto;
+        }
+
+        .slider-wrapper::-webkit-scrollbar {
+            display: none;
         }
 
         .slide {
             min-width: 100%;
             height: 100%;
             position: relative;
+            flex-shrink: 0;
         }
 
         .slide img {
@@ -216,6 +236,7 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            pointer-events: none;
         }
 
         .slide-content {
@@ -227,6 +248,7 @@
             background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
             color: #fff;
             text-align: left;
+            pointer-events: none;
         }
 
         .slide-content h3 {
@@ -247,6 +269,7 @@
             right: 30px;
             display: flex;
             gap: 8px;
+            z-index: 5;
         }
 
         .nav-dot {
@@ -274,15 +297,11 @@
             margin-bottom: 50px;
         }
 
-        /* --- PERBAIKAN: OVERRIDE KHUSUS UNTUK SECTION INI --- */
         .promo1-section .slider-container {
             aspect-ratio: auto !important;
-            /* Hapus rasio paksa */
             height: auto !important;
-            /* Tinggi mengikuti isi */
             background: transparent;
             box-shadow: none;
-            /* Opsional: hilangkan bayangan jika mau */
         }
 
         .promo1-section .slide {
@@ -291,13 +310,8 @@
 
         .promo1-section .slide img {
             height: auto !important;
-            /* Tinggi gambar mengikuti rasio asli */
             object-fit: contain !important;
-            /* Pastikan gambar utuh */
         }
-
-        /* --------------------------------------------------- */
-
 
         /* =========================================
            6. RUKO TERLARIS (GRID)
@@ -305,7 +319,6 @@
         .listing-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            /* 4 Kolom Desktop */
             gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
@@ -394,7 +407,6 @@
             color: var(--secondary);
             margin-right: 4px;
         }
-
 
         /* =========================================
            7. OTHER SECTIONS
@@ -629,7 +641,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            /* Pastikan override GIF tetap berlaku di tablet */
             .promo1-section .slider-container {
                 aspect-ratio: auto !important;
                 height: auto !important;
@@ -684,7 +695,8 @@
                 padding-bottom: 80px;
             }
 
-            .hero h2 {
+            /* Update: Responsive untuk H1 */
+            .hero h1 {
                 font-size: 1.8rem;
             }
 
@@ -705,7 +717,6 @@
                 width: 100%;
             }
 
-            /* Slider Mobile */
             .promo-section {
                 margin-top: 0;
                 padding: 30px 20px;
@@ -719,7 +730,6 @@
                 border: 1px solid #eee;
             }
 
-            /* PERBAIKAN MOBILE KHUSUS GIF SECTION */
             .promo1-section .slider-container {
                 aspect-ratio: auto !important;
                 height: auto !important;
@@ -749,8 +759,6 @@
             .listing-grid {
                 grid-template-columns: 1fr;
             }
-
-            /* 1 Kolom di Mobile */
 
             .stats-main,
             .footer-grid {
@@ -817,7 +825,10 @@
 <body>
 
     <header>
-        <h1>RukoMalang</h1>
+        <a href="index.html" class="logo-link">
+            <img src="img/logo.png" alt="Logo Ruko Malang">
+        </a>
+
         <label for="nav-toggle" class="nav-toggle-btn">☰</label>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" />
         <nav>
@@ -832,7 +843,7 @@
     </header>
 
     <section class="hero">
-        <h2>Jual & Sewa Ruko Strategis di Malang</h2>
+        <h1>Jual & Sewa Ruko Strategis di Malang</h1>
         <p>Lokasi premium, harga kompetitif, siap untuk berbagai jenis usaha.</p>
 
         <div class="search-box">
@@ -853,8 +864,7 @@
             <div class="slider-wrapper" id="sliderWrapper">
 
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1577412647305-991150c7d163?q=80&w=1200&auto=format&fit=crop"
-                        alt="Promo Ruko">
+                    <img src="img/satu.jpg" alt="Promo Ruko">
                     <div class="slide-content">
                         <h3>Promo Awal Tahun 2026</h3>
                         <p>Dapatkan diskon sewa hingga 10% untuk ruko di kawasan Dinoyo.</p>
@@ -862,8 +872,7 @@
                 </div>
 
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
-                        alt="Ruko Bisnis">
+                    <img src="img/dua.jpg" alt="Ruko Bisnis">
                     <div class="slide-content">
                         <h3>Listing Baru: Suhat Premium</h3>
                         <p>Ruko 3 lantai nol jalan raya, cocok untuk kantor & cafe.</p>
@@ -871,8 +880,7 @@
                 </div>
 
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop"
-                        alt="Investasi">
+                    <img src="img/tiga.jpg" alt="Investasi">
                     <div class="slide-content">
                         <h3>Investasi Cerdas</h3>
                         <p>Konsultasi gratis ROI properti komersial bersama tim ahli kami.</p>
@@ -894,8 +902,7 @@
         <div class="listing-grid">
 
             <div class="card" onclick="window.location.href='detail-ruko-suhat.html'" style="cursor: pointer;">
-                <img src="img/rumah1.jpg" alt="Ruko Suhat"
-                    onerror="this.src='https://images.unsplash.com/photo-1568605114967-8130f3a36994'" />
+                <img src="img/rumah1.jpg" alt="Ruko Suhat" />
                 <div class="card-body">
                     <span class="badge">Dijual</span>
                     <h3>Ruko Soekarno Hatta</h3>
@@ -910,8 +917,7 @@
             </div>
 
             <div class="card" onclick="window.location.href='detail-ruko-dinoyo.html'" style="cursor: pointer;">
-                <img src="img/rumah2.jpg" alt="Ruko Dinoyo"
-                    onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c'" />
+                <img src="img/rumah2.jpg" alt="Ruko Dinoyo" />
                 <div class="card-body">
                     <span class="badge sewa">Disewa</span>
                     <h3>Ruko Strategis Dinoyo</h3>
@@ -926,8 +932,7 @@
             </div>
 
             <div class="card" onclick="window.location.href='detail-ruko-kayutangan.html'" style="cursor: pointer;">
-                <img src="img/rumah1.jpg" alt="Kios Kayutangan"
-                    onerror="this.src='https://images.unsplash.com/photo-1582407947304-fd86f028f716'" />
+                <img src="img/rumah1.jpg" alt="Kios Kayutangan" />
                 <div class="card-body">
                     <span class="badge sewa">Disewa</span>
                     <h3>Kios Kayutangan Heritage</h3>
@@ -942,8 +947,7 @@
             </div>
 
             <div class="card" onclick="window.location.href='detail-ruko-blimbing.html'" style="cursor: pointer;">
-                <img src="img/rumah3.jpg" alt="Ruko Blimbing"
-                    onerror="this.src='https://images.unsplash.com/photo-1570129477492-45c003edd2be'" />
+                <img src="img/rumah3.jpg" alt="Ruko Blimbing" />
                 <div class="card-body">
                     <span class="badge">Dijual</span>
                     <h3>Ruko Siap Pakai Blimbing</h3>
@@ -987,32 +991,28 @@
         <h2>Jelajahi Area Populer</h2>
         <div class="listing">
             <a href="area.html#suhat" class="area-card">
-                <img src="img/rumah1.jpg" alt="Soekarno Hatta"
-                    onerror="this.src='https://images.unsplash.com/photo-1568605114967-8130f3a36994'" />
+                <img src="img/rumah1.jpg" alt="Soekarno Hatta" />
                 <div class="area-overlay">
                     <h3>Soekarno Hatta</h3>
                     <p>Pusat Bisnis & Kuliner <i class="fas fa-arrow-right"></i></p>
                 </div>
             </a>
             <a href="area.html#dinoyo" class="area-card">
-                <img src="img/rumah2.jpg" alt="Dinoyo"
-                    onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c'" />
+                <img src="img/rumah2.jpg" alt="Dinoyo" />
                 <div class="area-overlay">
                     <h3>Dinoyo</h3>
                     <p>Kawasan Kampus & Retail <i class="fas fa-arrow-right"></i></p>
                 </div>
             </a>
             <a href="area.html#ijen" class="area-card">
-                <img src="img/rumah1.jpg" alt="Ijen"
-                    onerror="this.src='https://images.unsplash.com/photo-1460317442991-0ec12438a906'" />
+                <img src="img/rumah1.jpg" alt="Ijen" />
                 <div class="area-overlay">
                     <h3>Ijen & Klojen</h3>
                     <p>Premium & Heritage <i class="fas fa-arrow-right"></i></p>
                 </div>
             </a>
             <a href="area.html#sawojajar" class="area-card">
-                <img src="img/rumah2.jpg" alt="Sawojajar"
-                    onerror="this.src='https://images.unsplash.com/photo-1572120360610-d971b9b78825'" />
+                <img src="img/rumah2.jpg" alt="Sawojajar" />
                 <div class="area-overlay">
                     <h3>Sawojajar</h3>
                     <p>Pemukiman & Daily Needs <i class="fas fa-arrow-right"></i></p>
@@ -1119,37 +1119,105 @@
             window.location.href = `ruko.html?lokasi=${lokasi}`;
         }
 
-        // Script Slider (Minimal untuk efek slider atas)
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
+        /* -----------------------------------------------
+           SCRIPT SLIDER: DRAGGABLE + AUTO SCROLL LOOP
+           ----------------------------------------------- */
+        const slider = document.getElementById('sliderWrapper');
         const dots = document.querySelectorAll('.nav-dot');
-        const wrapper = document.getElementById('sliderWrapper');
-        const totalSlides = slides.length;
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let autoScrollInterval;
 
-        function updateSlider() {
-            if (wrapper) {
-                wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-                if (dots.length > 0) {
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    dots[currentSlide].classList.add('active');
+        // 1. DRAG TO SCROLL (MOUSE)
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('dragging');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+            clearInterval(autoScrollInterval); // Pause auto scroll
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            if (!isDown) return;
+            isDown = false;
+            slider.classList.remove('dragging');
+            startAutoScroll(); // Resume
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('dragging');
+            startAutoScroll(); // Resume
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Kecepatan scroll
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // 2. TOUCH EVENTS (MOBILE SWIPE)
+        slider.addEventListener('touchstart', () => clearInterval(autoScrollInterval));
+        slider.addEventListener('touchend', () => startAutoScroll());
+
+        // 3. AUTO SCROLL FUNCTION
+        function startAutoScroll() {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = setInterval(() => {
+                // Cek apakah sudah di ujung kanan
+                // Tolerance 10px untuk browser differences
+                const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+                if (slider.scrollLeft >= maxScroll - 10) {
+                    // Jika di ujung, kembali ke awal
+                    slider.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                    updateDots(0);
+                } else {
+                    // Geser ke slide berikutnya (berdasarkan lebar slide yang terlihat)
+                    const slideWidth = slider.clientWidth;
+                    const nextPosition = slider.scrollLeft + slideWidth;
+
+                    slider.scrollTo({
+                        left: nextPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Update dots (perkiraan index)
+                    setTimeout(() => {
+                        const newIndex = Math.round(slider.scrollLeft / slider.clientWidth);
+                        // Fix jika index melebihi jumlah dots karena rounding
+                        const safeIndex = (newIndex + 1) >= dots.length ? 0 : newIndex + 1;
+                        updateDots(safeIndex);
+                    }, 500); // Tunggu animasi selesai
                 }
-            }
+            }, 4000); // Ganti slide setiap 4 detik
         }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlider();
+        // 4. DOT NAVIGATION
+        function updateDots(index) {
+            dots.forEach(d => d.classList.remove('active'));
+            if (dots[index]) dots[index].classList.add('active');
         }
 
         function goToSlide(index) {
-            currentSlide = index;
-            updateSlider();
+            const slideWidth = slider.clientWidth;
+            slider.scrollTo({
+                left: index * slideWidth,
+                behavior: 'smooth'
+            });
+            updateDots(index);
+            // Reset timer agar tidak bentrok
+            startAutoScroll();
         }
 
-        // Hanya jalankan interval jika ada lebih dari 1 slide di slider atas
-        if (totalSlides > 1) {
-            setInterval(nextSlide, 4000);
-        }
+        // Jalankan saat load
+        startAutoScroll();
     </script>
 </body>
 
