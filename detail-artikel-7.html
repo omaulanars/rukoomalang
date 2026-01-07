@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tren Properti Komersial Malang 2026 | Ruko Malang</title>
+    <title>Inspirasi Layout Ruko untuk Kantor Startup | Ruko Malang</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -82,6 +82,39 @@
         .btn-primary:hover {
             background: #e08a15;
             transform: translateY(-2px);
+        }
+
+        /* ================= SEARCH BAR ================= */
+        .search-section {
+            padding: 40px 20px 20px;
+            background: var(--primary);
+            text-align: center;
+        }
+
+        .search-box {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 50px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            padding: 5px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            color: var(--secondary);
+            cursor: pointer;
+            font-size: 18px;
         }
 
         /* ================= ARTICLE CONTENT (FULL WIDTH) ================= */
@@ -444,6 +477,24 @@
             text-decoration: none;
         }
 
+        .page-nav {
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .page-nav:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
         /* ================= FOOTER ================= */
         footer {
             background: #0a1f3f;
@@ -552,21 +603,29 @@
         </nav>
     </header>
 
+    <div class="search-section">
+        <div class="search-box">
+            <i class="fas fa-search" style="color: #999; margin-right: 10px;"></i>
+            <input type="text" placeholder="Cari artikel lain...">
+            <button><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
     <article class="article-container">
 
         <div class="article-header">
             <div class="article-meta">
-                <span><i class="far fa-calendar"></i> 12 Des 2025</span>
-                <span><i class="fas fa-tag"></i> Market Update</span>
+                <span><i class="far fa-calendar"></i> 5 Feb 2026</span>
+                <span><i class="fas fa-tag"></i> Desain Interior</span>
                 <span><i class="far fa-user"></i> Satria</span>
             </div>
-            <h1 class="article-title">Tren Properti Komersial Malang 2026: Apa yang Diminati?</h1>
+            <h1 class="article-title">Inspirasi Layout Ruko untuk Kantor Startup & Agency</h1>
         </div>
 
         <figure>
-            <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd" alt="Tren Properti Malang 2026"
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Layout Kantor Ruko Modern"
                 class="featured-img">
-            <figcaption>Lanskap properti komersial yang semakin modern di kawasan urban Malang.</figcaption>
+            <figcaption>Konsep kantor ruko modern yang terbuka dan fleksibel.</figcaption>
         </figure>
 
         <div class="article-body">
@@ -577,72 +636,81 @@
                     <i class="fas fa-chevron-down" id="tocIcon"></i>
                 </div>
                 <ul class="toc-list" id="tocList">
-                    <li><a href="#multifungsi">1. Bangkitnya Ruko Multifungsi</a></li>
-                    <li><a href="#coworking">2. Co-working Space & Creative Hub</a></li>
-                    <li><a href="#lokasi">3. Pergeseran ke Kawasan Penyangga</a></li>
-                    <li><a href="#teknologi">4. Integrasi Smart Building</a></li>
+                    <li><a href="#openplan">1. Konsep Open Plan untuk Kolaborasi</a></li>
+                    <li><a href="#pod">2. Meeting Pod & Phone Booth</a></li>
+                    <li><a href="#vertikal">3. Pembagian Zona Vertikal</a></li>
+                    <li><a href="#pencahayaan">4. Memaksimalkan Cahaya Alami</a></li>
+                    <li><a href="#pantry">5. Pantry sebagai Pusat Interaksi</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
             </div>
 
-            <p>Malang bukan lagi sekadar kota pendidikan dan pariwisata. Memasuki tahun 2026, lanskap properti komersial
-                di kota ini mengalami transformasi signifikan. Analisis pasar terbaru menunjukkan pergeseran tren
-                investasi yang tidak lagi terpaku pada fungsi perdagangan konvensional, melainkan ke arah fleksibilitas
-                dan kolaborasi.</p>
-
-            <h3 id="multifungsi">1. Bangkitnya Ruko Multifungsi (Mixed-Use)</h3>
-            <p>Investor kini lebih meminati ruko dengan konsep <em>mixed-use</em>. Lantai dasar digunakan untuk
-                <em>coffee shop</em> atau retail, sementara lantai atas disulap menjadi hunian studio atau kantor
-                privat. Konsep ini menjawab kebutuhan kaum milenial Malang yang menginginkan efisiensi tempat tinggal
-                sekaligus tempat usaha.
+            <p>Ruko (Rumah Toko) seringkali memiliki tantangan desain berupa bentuknya yang memanjang ke belakang dan
+                minim jendela di sisi samping. Namun, dengan penataan yang cerdas, ruko bisa disulap menjadi kantor
+                startup yang dinamis, produktif, dan tentunya estetik. Kuncinya adalah efisiensi ruang dan pencahayaan.
             </p>
 
+            <h3 id="openplan">1. Konsep Open Plan untuk Kolaborasi</h3>
+            <p>Untuk mengatasi kesan sempit, hindari penggunaan sekat tembok masif. Gunakan konsep <em>open plan</em> di
+                mana meja kerja disusun berkelompok tanpa partisi tinggi. Ini tidak hanya membuat ruangan terasa lebih
+                luas, tetapi juga mendorong komunikasi dan kolaborasi antar tim yang sangat krusial bagi budaya kerja
+                startup.</p>
+
             <div class="read-also">
-                Baca Juga: <a href="detail-artikel-8.html">Ruko vs Rumah: Mana Investasi yang Lebih Menguntungkan?</a>
+                Baca Juga: <a href="detail-artikel-4.html">Tips Renovasi Ruko Tua Menjadi Cafe Instagramable</a>
             </div>
 
-            <h3 id="coworking">2. Co-working Space & Creative Hub</h3>
-            <p>Dengan semakin banyaknya mahasiswa dan pekerja remote di Malang, permintaan akan ruang kerja fleksibel
-                meroket. Ruko-ruko tua di area Dinoyo dan Lowokwaru banyak yang direvitalisasi menjadi <em>co-working
-                    space</em> dengan desain industrial. Ini adalah peluang emas bagi pemilik properti yang ingin
-                memaksimalkan <em>yield</em> sewa.</p>
+            <h3 id="pod">2. Meeting Pod & Phone Booth</h3>
+            <p>Kelemahan konsep terbuka adalah kebisingan. Solusinya, buatlah 1-2 ruang kecil kedap suara (phone booth)
+                berukuran 1x1 meter untuk panggilan telepon penting atau meeting online. Untuk meeting tim, gunakan
+                partisi kaca agar visual tetap tembus pandang namun suara terisolasi.</p>
 
             <figure>
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Interior Coworking Space"
+                <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36" alt="Desain Interior Startup"
                     class="content-img">
-                <figcaption>Desain interior co-working space yang modern dan nyaman untuk bekerja.</figcaption>
+                <figcaption>Suasana kerja yang dinamis dengan pencahayaan yang baik.</figcaption>
             </figure>
 
-            <h3 id="lokasi">3. Pergeseran ke Kawasan Penyangga</h3>
-            <p>Jika dulu pusat kota (Klojen) menjadi primadona, kini kawasan penyangga seperti Karanglo (dekat exit tol)
-                dan Pakis mulai dilirik. Harga tanah yang masih masuk akal dan aksesibilitas yang membaik akibat
-                pembangunan infrastruktur tol Malang-Pandaan menjadi pemicu utamanya.</p>
+            <h3 id="vertikal">3. Pembagian Zona Vertikal</h3>
+            <p>Manfaatkan ketinggian ruko yang biasanya terdiri dari 2-3 lantai.
+                <br>
+                <strong>Lantai 1:</strong> Area publik (resepsionis, ruang meeting tamu, pantry).
+                <br>
+                <strong>Lantai 2:</strong> Area kerja fokus (divisi teknis, admin).
+                <br>
+                <strong>Lantai 3:</strong> Ruang santai, mushola, atau area direksi.
+            </p>
 
             <div class="quote-box">
                 <i class="fas fa-quote-left"></i>
-                "Tahun 2026 adalah tentang konektivitas. Ruko yang sukses bukan yang paling besar, tapi yang paling
-                mudah diakses dan fleksibel penggunaannya."
+                "Desain kantor bukan hanya soal estetika, tapi tentang bagaimana ruang tersebut mempengaruhi mood dan
+                produktivitas tim Anda."
             </div>
 
-            <h3 id="teknologi">4. Integrasi Smart Building</h3>
-            <p>Penyewa modern menuntut fasilitas lebih. Ruko yang dilengkapi dengan infrastruktur internet kecepatan
-                tinggi (fiber optic ready), sistem keamanan pintar (smart lock/CCTV cloud), dan efisiensi energi akan
-                memiliki nilai jual dan sewa yang jauh lebih tinggi dibandingkan ruko standar.</p>
+            <h3 id="pencahayaan">4. Memaksimalkan Cahaya Alami</h3>
+            <p>Karena ruko minim jendela samping, maksimalkan jendela depan dan belakang. Tempatkan meja kerja utama di
+                dekat sumber cahaya. Gunakan cat dinding warna putih atau warna terang untuk memantulkan cahaya ke
+                seluruh ruangan. Cermin besar di salah satu sisi dinding juga bisa menciptakan ilusi ruang yang lebih
+                luas.</p>
 
-            <p><strong>Kesimpulan:</strong> Peluang investasi di Malang tahun 2026 sangat cerah bagi mereka yang jeli
-                melihat perubahan gaya hidup. Jangan hanya membeli bangunan, belilah potensi fungsi di masa depan.</p>
+            <h3 id="pantry">5. Pantry sebagai Pusat Interaksi</h3>
+            <p>Jangan sembunyikan pantry di pojok gelap. Buat pantry yang nyaman dengan meja bar kecil. Di startup,
+                pantry seringkali menjadi tempat lahirnya ide-ide kreatif saat tim sedang rehat kopi.</p>
+
+            <p><strong>Kesimpulan:</strong> Dengan layout yang tepat, ruko yang sempit pun bisa terasa lega dan menjadi
+                rumah kedua yang nyaman bagi tim Anda untuk berkarya.</p>
 
             <div class="faq-section" id="faq">
                 <h3>Pertanyaan Umum (FAQ)</h3>
                 <details class="faq-item">
-                    <summary>Berapa kenaikan harga properti komersial di Malang per tahun?</summary>
-                    <p>Secara rata-rata, kenaikan <em>capital gain</em> ruko di area strategis Malang mencapai 8-12% per
-                        tahun.</p>
+                    <summary>Berapa luas ideal meja kerja per karyawan?</summary>
+                    <p>Untuk kenyamanan, alokasikan sekitar 120-140 cm panjang meja per orang, dengan jarak sirkulasi
+                        belakang kursi minimal 90 cm.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Bisnis apa yang paling cocok untuk ruko di 2026?</summary>
-                    <p>Bisnis F&B (Food & Beverage) kekinian, klinik kecantikan, dan kantor agensi digital masih
-                        mendominasi permintaan pasar.</p>
+                    <summary>Material lantai apa yang cocok untuk kantor ruko?</summary>
+                    <p>Vinyl atau parket kayu sangat disarankan karena memberikan kesan hangat, meredam suara langkah
+                        kaki, dan mudah perawatannya.</p>
                 </details>
             </div>
 
@@ -673,10 +741,10 @@
         <h3>Artikel Terkait</h3>
         <div class="blog-grid">
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" class="blog-img">
+                <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd" class="blog-img">
                 <div class="blog-content">
-                    <h4 class="blog-title-sm">5 Tips Memilih Lokasi Ruko</h4>
-                    <a href="detail-artikel-1.html" class="read-more-sm">Baca Selengkapnya</a>
+                    <h4 class="blog-title-sm">Tren Properti Komersial Malang 2026</h4>
+                    <a href="detail-artikel-3.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
             <div class="blog-card">
@@ -687,10 +755,10 @@
                 </div>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" class="blog-img">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" class="blog-img">
                 <div class="blog-content">
-                    <h4 class="blog-title-sm">Inspirasi Layout Kantor Startup</h4>
-                    <a href="detail-artikel-7.html" class="read-more-sm">Baca Selengkapnya</a>
+                    <h4 class="blog-title-sm">Cara Cepat Menyewakan Ruko</h4>
+                    <a href="detail-artikel-5.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
         </div>

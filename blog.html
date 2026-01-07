@@ -28,7 +28,6 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* PERBAIKAN: Mencegah scroll menyamping */
         html,
         body {
             background: var(--light);
@@ -104,7 +103,6 @@
             background: var(--primary);
             color: #fff;
             padding: 60px 20px 80px;
-            /* Extra padding bottom for search bar overlap */
             text-align: center;
         }
 
@@ -120,16 +118,13 @@
             margin: 0 auto;
         }
 
-        /* PERBAIKAN SEARCH CONTAINER */
         .search-container {
             max-width: 700px;
             margin: -30px auto 50px;
-            /* Overlap effect default desktop */
             padding: 0 20px;
             position: relative;
             z-index: 10;
             width: 100%;
-            /* Pastikan lebar penuh */
         }
 
         .search-box {
@@ -142,7 +137,6 @@
             border: 1px solid transparent;
             transition: 0.3s;
             width: 100%;
-            /* Pastikan lebar penuh dalam container */
         }
 
         .search-box:focus-within {
@@ -152,14 +146,12 @@
 
         .search-box input {
             flex: 1;
-            /* Input mengambil sisa ruang */
             border: none;
             outline: none;
             font-size: 16px;
             padding: 10px;
             color: #333;
             min-width: 0;
-            /* Mencegah input overflow di flexbox */
         }
 
         .search-box button {
@@ -175,7 +167,6 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            /* Mencegah tombol mengecil */
         }
 
         .search-box button:hover {
@@ -268,10 +259,6 @@
             gap: 5px;
         }
 
-        .hidden {
-            display: none;
-        }
-
         #noResults {
             text-align: center;
             width: 100%;
@@ -282,7 +269,43 @@
         }
 
         /* =========================================
-           5. FOOTER
+           5. PAGINATION (UPDATED: NO NUMBERS)
+           ========================================= */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 60px;
+        }
+
+        .page-nav {
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .page-nav:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .page-nav.disabled {
+            border-color: #ddd;
+            color: #ccc;
+            pointer-events: none;
+            cursor: default;
+        }
+
+        /* =========================================
+           6. FOOTER
            ========================================= */
         footer {
             background: #0a1f3f;
@@ -341,9 +364,8 @@
         }
 
         /* =========================================
-           6. RESPONSIVE (MOBILE FIX)
+           7. RESPONSIVE
            ========================================= */
-
         @media (max-width: 992px) {
             .blog-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -390,7 +412,6 @@
                 text-align: center;
             }
 
-            /* Fix Search Bar Mobile */
             .page-header {
                 padding: 40px 20px 60px;
             }
@@ -402,17 +423,14 @@
             .search-container {
                 margin: -30px auto 40px;
                 padding: 0 15px;
-                /* Padding lebih kecil agar tidak terlalu mepet */
             }
 
             .search-box {
                 padding: 8px 15px;
-                /* Padding dalam search box dikecilkan sedikit */
             }
 
             .search-box input {
                 font-size: 14px;
-                /* Font input dikecilkan sedikit */
             }
 
             .blog-grid {
@@ -474,10 +492,8 @@
                         <span><i class="fas fa-tag"></i> Tips Bisnis</span>
                     </div>
                     <h3 class="blog-title">5 Tips Memilih Lokasi Ruko yang Pasti Cuan di Malang</h3>
-                    <p class="blog-excerpt">
-                        Lokasi adalah kunci utama keberhasilan bisnis. Pelajari faktor-faktor penting seperti traffic,
-                        demografi, dan aksesibilitas sebelum membeli ruko.
-                    </p>
+                    <p class="blog-excerpt">Lokasi adalah kunci utama keberhasilan bisnis. Pelajari faktor-faktor
+                        penting seperti traffic, demografi, dan aksesibilitas sebelum membeli ruko.</p>
                     <a href="detail-artikel-1.html" class="read-more">Baca Selengkapnya <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
@@ -492,10 +508,8 @@
                         <span><i class="fas fa-tag"></i> Legalitas</span>
                     </div>
                     <h3 class="blog-title">Panduan Lengkap Mengurus Izin Usaha Ruko (OSS)</h3>
-                    <p class="blog-excerpt">
-                        Jangan sampai usaha Anda terkendala masalah izin. Simak panduan langkah demi langkah mengurus
-                        NIB dan izin lokasi usaha ruko melalui sistem OSS.
-                    </p>
+                    <p class="blog-excerpt">Jangan sampai usaha Anda terkendala masalah izin. Simak panduan langkah demi
+                        langkah mengurus NIB dan izin lokasi usaha ruko melalui sistem OSS.</p>
                     <a href="detail-artikel-2.html" class="read-more">Baca Selengkapnya <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
@@ -510,11 +524,105 @@
                         <span><i class="fas fa-tag"></i> Market Update</span>
                     </div>
                     <h3 class="blog-title">Tren Properti Komersial Malang 2026: Apa yang Diminati?</h3>
-                    <p class="blog-excerpt">
-                        Analisis pasar menunjukkan pergeseran tren ke arah ruko multifungsi dan co-working space.
-                        Temukan peluang investasi terbaik tahun ini.
-                    </p>
+                    <p class="blog-excerpt">Analisis pasar menunjukkan pergeseran tren ke arah ruko multifungsi dan
+                        co-working space. Temukan peluang investasi terbaik tahun ini.</p>
                     <a href="detail-artikel-3.html" class="read-more">Baca Selengkapnya <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1581578731117-10d52143b0d8" alt="Renovasi Ruko"
+                    class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> 15 Jan 2026</span>
+                        <span><i class="fas fa-tag"></i> Renovasi</span>
+                    </div>
+                    <h3 class="blog-title">Tips Renovasi Ruko Tua Menjadi Cafe Instagramable</h3>
+                    <p class="blog-excerpt">Ubah ruko lama Anda menjadi magnet pengunjung dengan desain industrial
+                        modern. Tips hemat budget namun hasil maksimal.</p>
+                    <a href="detail-artikel-4.html" class="read-more">Baca Selengkapnya <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" alt="Pemasaran Ruko"
+                    class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> 22 Jan 2026</span>
+                        <span><i class="fas fa-tag"></i> Pemasaran</span>
+                    </div>
+                    <h3 class="blog-title">Cara Cepat Menyewakan Ruko: Strategi Pemasaran Digital</h3>
+                    <p class="blog-excerpt">Ruko kosong terlalu lama? Pelajari cara memanfaatkan media sosial dan portal
+                        properti untuk mendapatkan penyewa potensial lebih cepat.</p>
+                    <a href="detail-artikel-5.html" class="read-more">Baca Selengkapnya <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c" alt="Pajak Properti"
+                    class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> 30 Jan 2026</span>
+                        <span><i class="fas fa-tag"></i> Keuangan</span>
+                    </div>
+                    <h3 class="blog-title">Memahami Pajak Jual Beli & Sewa Ruko di Indonesia</h3>
+                    <p class="blog-excerpt">Pahami perhitungan PPh Final, BPHTB, dan PBB agar tidak kaget dengan biaya
+                        tambahan saat transaksi properti komersial.</p>
+                    <a href="detail-artikel-6.html" class="read-more">Baca Selengkapnya <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Desain Kantor"
+                    class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> 5 Feb 2026</span>
+                        <span><i class="fas fa-tag"></i> Desain Interior</span>
+                    </div>
+                    <h3 class="blog-title">Inspirasi Layout Ruko untuk Kantor Startup & Agency</h3>
+                    <p class="blog-excerpt">Maksimalkan ruang terbatas ruko menjadi kantor yang produktif dan nyaman.
+                        Ide layout open space dan ruang meeting minimalis.</p>
+                    <a href="detail-artikel-7.html" class="read-more">Baca Selengkapnya <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" alt="Investasi Properti"
+                    class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> 12 Feb 2026</span>
+                        <span><i class="fas fa-tag"></i> Investasi</span>
+                    </div>
+                    <h3 class="blog-title">Ruko vs Rumah: Mana Investasi yang Lebih Menguntungkan?</h3>
+                    <p class="blog-excerpt">Perbandingan ROI (Return on Investment) antara menyewakan ruko dan rumah
+                        tinggal di kawasan berkembang Malang.</p>
+                    <a href="detail-artikel-8.html" class="read-more">Baca Selengkapnya <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa" alt="Keamanan Ruko"
+                    class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> 18 Feb 2026</span>
+                        <span><i class="fas fa-tag"></i> Tips Keamanan</span>
+                    </div>
+                    <h3 class="blog-title">Standar Keamanan Ruko: CCTV, Rolling Door, & Alarm</h3>
+                    <p class="blog-excerpt">Lindungi aset bisnis Anda. Panduan memilih sistem keamanan yang tepat dan
+                        efektif untuk properti ruko Anda.</p>
+                    <a href="detail-artikel-9.html" class="read-more">Baca Selengkapnya <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -525,6 +633,12 @@
             </div>
 
         </div>
+
+        <div class="pagination">
+            <a href="#" class="page-nav disabled"><i class="fas fa-chevron-left"></i> Previous</a>
+            <a href="#" class="page-nav">Next <i class="fas fa-chevron-right"></i></a>
+        </div>
+
     </section>
 
     <footer>
@@ -539,6 +653,7 @@
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="ruko.html">Listing Ruko</a></li>
                     <li><a href="blog.html">Blog</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
                 </ul>
             </div>
             <div class="footer-col">

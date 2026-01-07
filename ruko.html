@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daftar Ruko | Ruko Malang</title>
+    <title>Listing | Ruko Malang</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -98,7 +98,7 @@
         }
 
         /* =========================================
-           3. PAGE HEADER
+           3. PAGE HEADER (HERO)
            ========================================= */
         .page-header {
             background: var(--primary);
@@ -140,32 +140,10 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
-        /* Tombol Toggle Filter (Hanya muncul di Mobile) */
-        .btn-filter-toggle {
-            display: none;
-            /* Default hidden di desktop */
-            width: 100%;
-            padding: 12px;
-            background: #fff;
-            color: var(--primary);
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
+        .sidebar h3 {
             margin-bottom: 20px;
-            text-align: left;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-            transition: 0.3s;
-        }
-
-        .btn-filter-toggle i {
-            margin-right: 8px;
-            color: var(--secondary);
-        }
-
-        .btn-filter-toggle:hover {
-            background: #f9f9f9;
-            border-color: var(--secondary);
+            color: var(--primary);
+            font-size: 18px;
         }
 
         .filter-group {
@@ -176,17 +154,19 @@
 
         .filter-group:last-child {
             border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .filter-title {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 10px;
+            color: #555;
+            margin-bottom: 8px;
             display: block;
         }
 
-        /* Styling Dropdown Sidebar Baru */
+        /* Styling Dropdown Sidebar */
         .sidebar select {
             width: 100%;
             padding: 12px;
@@ -211,7 +191,7 @@
             box-shadow: 0 0 0 2px rgba(255, 159, 28, 0.1);
         }
 
-        /* --- LISTING HEADER (SORT ONLY) --- */
+        /* --- LISTING HEADER --- */
         .listing-header {
             display: flex;
             justify-content: space-between;
@@ -226,7 +206,6 @@
             color: #555;
         }
 
-        /* Sort Box */
         .sort-box select {
             padding: 10px 20px;
             border-radius: 50px;
@@ -401,40 +380,33 @@
         @media (max-width: 992px) {
             .listing-container {
                 grid-template-columns: 1fr;
-                /* Jadi 1 kolom */
+                /* Layout jadi 1 kolom */
                 gap: 20px;
             }
 
-            /* LOGIKA TOGGLE SIDEBAR MOBILE */
+            /* --- MODIFIKASI SIDEBAR DI MOBILE (Dijejer) --- */
             .sidebar {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                /* Jadi 2 kolom berdampingan */
+                gap: 15px;
+                /* Jarak antar dropdown */
+                padding: 15px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            .sidebar h3 {
                 display: none;
-                /* Sembunyikan filter secara default */
-                margin-bottom: 20px;
             }
 
-            .sidebar.active {
-                display: block;
-                /* Tampilkan jika class active ada */
-                animation: fadeIn 0.3s ease;
-            }
+            /* Hilangkan judul "Filter" */
 
-            .btn-filter-toggle {
-                display: flex;
-                /* Tampilkan tombol toggle */
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+            /* Reset Margin Filter Group agar pas */
+            .filter-group {
+                margin-bottom: 0;
+                border-bottom: none;
+                padding-bottom: 0;
             }
         }
 
@@ -480,6 +452,27 @@
                 text-align: center;
             }
 
+            /* --- PERUBAHAN HERO MOBILE DISINI --- */
+            .page-header {
+                padding: 30px 20px;
+                /* Padding dikurangi agar lebih pendek */
+                min-height: auto;
+                /* Hilangkan min-height jika ada */
+            }
+
+            .page-header h2 {
+                font-size: 24px;
+                /* Font Judul sedikit lebih kecil */
+                margin-bottom: 5px;
+            }
+
+            .page-header p {
+                font-size: 14px;
+                /* Font deskripsi lebih kecil */
+            }
+
+            /* ------------------------------------ */
+
             .listing-container {
                 margin: 20px auto;
                 gap: 20px;
@@ -493,7 +486,6 @@
                 margin-bottom: 15px;
             }
 
-            /* Sort box full width di mobile agar rapi */
             .sort-box {
                 width: 100%;
                 margin-top: 10px;
@@ -540,20 +532,14 @@
     </header>
 
     <section class="page-header">
-        <h2>Daftar Ruko Tersedia</h2>
+        <h2>Listing</h2>
         <p>Temukan properti komersial terbaik di Malang Raya</p>
     </section>
 
     <section class="listing-container">
 
-        <button class="btn-filter-toggle" onclick="toggleSidebar()">
-            <span><i class="fas fa-filter"></i> Filter Pencarian</span>
-            <i class="fas fa-chevron-down" id="filterIcon"></i>
-        </button>
-
-        <aside class="sidebar" id="filterSidebar">
-            <h3 style="margin-bottom: 20px; color: var(--primary);">Filter</h3>
-
+        <aside class="sidebar">
+            <h3>Filter</h3>
             <div class="filter-group">
                 <span class="filter-title">Lokasi</span>
                 <select id="filterLokasi" onchange="filterListings()">
@@ -566,7 +552,7 @@
                 </select>
             </div>
 
-            <div class="filter-group" style="border-bottom: none;">
+            <div class="filter-group">
                 <span class="filter-title">Tipe Transaksi</span>
                 <select id="filterTipe" onchange="filterListings()">
                     <option value="all">Semua Tipe</option>
@@ -578,7 +564,7 @@
 
         <main>
             <div class="listing-header">
-                <p class="listing-count">Menampilkan hasil:</p>
+                <p class="listing-count" id="listingCount">Menampilkan hasil:</p>
 
                 <div class="sort-box">
                     <select id="sortSelect" onchange="sortListings()">
@@ -739,7 +725,6 @@
                 <ul>
                     <li>📞 0895-6390-68080</li>
                     <li>✉️ info@rukomalang.com</li>
-                    <li>📍 Jl. Veteran No. 10, Malang</li>
                 </ul>
             </div>
         </div>
@@ -774,23 +759,7 @@
             filterListings();
         });
 
-        // --- FUNGSI TOGGLE SIDEBAR MOBILE ---
-        function toggleSidebar() {
-            var sidebar = document.getElementById("filterSidebar");
-            var icon = document.getElementById("filterIcon");
-
-            if (sidebar.classList.contains("active")) {
-                sidebar.classList.remove("active");
-                icon.classList.remove("fa-chevron-up");
-                icon.classList.add("fa-chevron-down");
-            } else {
-                sidebar.classList.add("active");
-                icon.classList.remove("fa-chevron-down");
-                icon.classList.add("fa-chevron-up");
-            }
-        }
-
-        // --- FUNGSI FILTER (UPDATED UNTUK DROPDOWN) ---
+        // --- FUNGSI FILTER ---
         function filterListings() {
             const cards = document.querySelectorAll('.card');
             let visibleCount = 0;
@@ -803,7 +772,7 @@
                 const cardLokasi = card.getAttribute('data-lokasi');
                 const cardTipe = card.getAttribute('data-tipe');
 
-                // Logika Filter: Jika "all" ATAU match dengan value
+                // Logika: Tampilkan jika "all" ATAU match dengan value
                 let locationMatch = (selectedLokasi === 'all') || (cardLokasi === selectedLokasi);
                 let typeMatch = (selectedTipe === 'all') || (cardTipe === selectedTipe);
 
@@ -814,6 +783,10 @@
                     card.classList.add('hidden');
                 }
             });
+
+            // Update teks jumlah ruko
+            const countText = document.getElementById('listingCount');
+            countText.innerText = `Menampilkan Hasil: ${visibleCount} Ruko`;
 
             const noResult = document.getElementById('noResults');
             if (visibleCount === 0) {
