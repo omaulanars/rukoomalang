@@ -35,6 +35,8 @@
             line-height: 1.6;
             overflow-x: hidden;
             width: 100%;
+            scroll-behavior: smooth;
+            /* Tambahan untuk scroll smooth */
         }
 
         /* =========================================
@@ -296,7 +298,78 @@
         }
 
         /* =========================================
-           6. RESPONSIVE QUERIES
+           6. FLOATING BUTTONS (WA & SCROLL TOP)
+           ========================================= */
+        .floating-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .wa-btn {
+            background-color: #25d366;
+        }
+
+        .scroll-top-btn {
+            background-color: var(--primary);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .scroll-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Tooltip simple */
+        .float-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+
+        .float-btn:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* =========================================
+           7. RESPONSIVE QUERIES
            ========================================= */
 
         /* Tablet & Mobile (Max 992px) */
@@ -377,6 +450,18 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 30px;
+            }
+
+            /* Adjust floating button position on mobile */
+            .floating-container {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .float-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
             }
         }
 
@@ -560,10 +645,37 @@
         </div>
     </footer>
 
+    <div class="floating-container">
+        <a href="#" class="float-btn scroll-top-btn" id="scrollTopBtn" data-tooltip="Ke Atas">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+
+        <a href="https://wa.me/62895639068080?text=Halo%20Admin%20RukoMalang,%20saya%20tertarik%20untuk%20tanya%20seputar%20area%20bisnis"
+            class="float-btn wa-btn" target="_blank" data-tooltip="Hubungi via WA">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
     <script>
         function exploreArea(lokasiId) {
             window.location.href = `ruko.html?lokasi=${lokasiId}`;
         }
+
+        // --- SCRIPT SCROLL TO TOP ---
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+            }
+        };
+
+        scrollTopBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 
 </body>

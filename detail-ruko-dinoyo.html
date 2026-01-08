@@ -32,6 +32,8 @@
             background: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            scroll-behavior: smooth;
+            /* Tambahan untuk scroll smooth */
         }
 
         /* =========================================
@@ -368,6 +370,7 @@
         .footer-col ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .footer-col ul li {
@@ -391,6 +394,7 @@
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
+            text-align: left;
         }
 
         .footer-bottom {
@@ -446,6 +450,18 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            /* Adjust floating button position on mobile */
+            .floating-container {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .float-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -482,9 +498,9 @@
 
         <main>
             <div class="gallery-wrapper">
-                <img id="mainImg" src="img/rumah1.jpg" alt="Ruko Utama" class="main-image">
+                <img id="mainImg" src="img/rumah2.jpg" alt="Ruko Utama" class="main-image">
                 <div class="thumbnail-grid">
-                    <img src="img/rumah1.jpg" class="thumb active" onclick="changeImage(this)">
+                    <img src="img/rumah2.jpg" class="thumb active" onclick="changeImage(this)">
                     <img src="img/detail1.jpg" class="thumb" onclick="changeImage(this)">
                     <img src="img/detail2.jpg" class="thumb" onclick="changeImage(this)">
                     <img src="img/detail3.jpg" class="thumb" onclick="changeImage(this)">
@@ -599,14 +615,17 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>RukoMalang</h4>
-                <p>Jual & sewa ruko strategis di Malang dan sekitarnya.</p>
+                <p>Jual & sewa ruko strategis di Malang dan sekitarnya. Solusi properti komersial terpercaya sejak 2020.
+                </p>
             </div>
             <div class="footer-col">
                 <h4>Link Cepat</h4>
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="ruko.html">Listing Ruko</a></li>
-                    <li><a href="#">Pasang Iklan</a></li>
+                    <li><a href="area.html">Area</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -621,6 +640,8 @@
                 <h4>Network</h4>
                 <ul>
                     <li><a href="#">Properti Malang</a></li>
+                    <li><a href="#">SewaKantor.id</a></li>
+                    <li><a href="#">RukoJawaTimur.com</a></li>
                     <li><a href="#">Investasi Properti</a></li>
                 </ul>
             </div>
@@ -629,13 +650,25 @@
                 <ul>
                     <li>📞 0895-6390-68080</li>
                     <li>✉️ info@rukomalang.com</li>
+                    <li>📍 Jl. Veteran No. 10, Malang</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Ruko Malang. All Rights Reserved.</p>
+            <p>&copy; 2026 Ruko Malang. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <div class="floating-container">
+        <a href="#" class="float-btn scroll-top-btn" id="scrollTopBtn" data-tooltip="Ke Atas">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+
+        <a href="https://wa.me/62895639068080?text=Halo%20Admin%20RukoMalang,%20saya%20tertarik%20dengan%20properti%20Ruko%20Dinoyo"
+            class="float-btn wa-btn" target="_blank" data-tooltip="Hubungi via WA">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <script>
         // 1. Script Ganti Gambar Galeri
@@ -669,6 +702,22 @@
             var url = `https://wa.me/${nomorTujuan}?text=${text}`;
             window.open(url, '_blank');
         }
+
+        // --- SCRIPT SCROLL TO TOP ---
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+            }
+        };
+
+        scrollTopBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 
 </body>
