@@ -4,10 +4,75 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog & Tips Properti | Ruko Malang</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Blog & Tips Properti Malang | Panduan Investasi Ruko</title>
+    <meta name="description"
+        content="Temukan tips terbaru seputar investasi ruko, panduan legalitas, renovasi, dan tren properti komersial di Malang.">
+    <meta name="keywords"
+        content="Tips Properti Malang, Investasi Ruko, Panduan Legalitas Properti, Renovasi Ruko, Bisnis di Malang">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.rukomalang.com/blog.html" />
+    <meta name="author" content="Ruko Malang">
+
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Blog Properti Ruko Malang">
+    <meta property="og:description"
+        content="Kumpulan artikel dan tips terbaik untuk memaksimalkan investasi properti komersial Anda di Malang.">
+    <meta property="og:url" content="https://www.rukomalang.com/blog.html">
+    <meta property="og:site_name" content="Ruko Malang">
+    <meta property="og:image" content="https://www.rukomalang.com/img/og-blog.jpg">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0f2c59">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Blog Ruko Malang",
+      "description": "Informasi dan tips seputar properti komersial di Malang.",
+      "url": "https://www.rukomalang.com/blog.html",
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "5 Tips Memilih Lokasi Ruko yang Pasti Cuan di Malang",
+          "image": "https://www.rukomalang.com/img/artikel1.jpg",
+          "datePublished": "2025-10-10",
+          "url": "https://www.rukomalang.com/detail-artikel-1.html"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Panduan Lengkap Mengurus Izin Usaha Ruko (OSS)",
+          "image": "https://www.rukomalang.com/img/artikel2.jpg",
+          "datePublished": "2025-11-05",
+          "url": "https://www.rukomalang.com/detail-artikel-2.html"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Tren Properti Komersial Malang 2026: Apa yang Diminati?",
+          "image": "https://www.rukomalang.com/img/artikel3.jpg",
+          "datePublished": "2025-12-12",
+          "url": "https://www.rukomalang.com/detail-artikel-3.html"
+        }
+      ]
+    }
+    </script>
 
     <style>
         /* =========================================
@@ -36,7 +101,11 @@
             overflow-x: hidden;
             width: 100%;
             scroll-behavior: smooth;
-            /* Tambahan untuk scroll smooth */
+        }
+
+        /* Optimasi Font Display */
+        body {
+            font-display: swap;
         }
 
         /* =========================================
@@ -52,11 +121,12 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            min-height: 70px;
+            /* Prevent CLS */
         }
 
         header .logo-link img {
             max-height: 50px;
-            /* Mengatur tinggi logo agar proporsional */
             width: auto;
             display: block;
         }
@@ -110,9 +180,12 @@
             text-align: center;
         }
 
-        .page-header h2 {
+        /* OPTIMASI HEADING H1 */
+        .page-header h1 {
             font-size: 36px;
             margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.3;
         }
 
         .page-header p {
@@ -233,6 +306,7 @@
             margin-right: 4px;
         }
 
+        /* OPTIMASI HEADING H2 (BLOG TITLE) */
         .blog-title {
             font-size: 20px;
             color: var(--primary);
@@ -273,7 +347,7 @@
         }
 
         /* =========================================
-           5. PAGINATION (UPDATED: NO NUMBERS)
+           5. PAGINATION
            ========================================= */
         .pagination {
             display: flex;
@@ -318,7 +392,8 @@
             margin-top: 60px;
         }
 
-        .footer-col h4 {
+        /* OPTIMASI HEADING H3 (FOOTER) */
+        .footer-col h3 {
             color: #ff9f1c;
             margin-bottom: 16px;
             font-size: 18px;
@@ -368,7 +443,7 @@
         }
 
         /* =========================================
-           7. FLOATING BUTTONS (WA & SCROLL TOP)
+           7. FLOATING BUTTONS
            ========================================= */
         .floating-container {
             position: fixed;
@@ -491,7 +566,7 @@
                 padding: 40px 20px 60px;
             }
 
-            .page-header h2 {
+            .page-header h1 {
                 font-size: 28px;
             }
 
@@ -557,7 +632,7 @@
     </header>
 
     <section class="page-header">
-        <h2>Blog & Berita Properti</h2>
+        <h1>Blog & Tips Properti</h1>
         <p>Dapatkan wawasan terbaru seputar investasi ruko dan bisnis di Malang.</p>
     </section>
 
@@ -573,13 +648,14 @@
         <div class="blog-grid" id="blogGrid">
 
             <div class="blog-card">
-                <img src="img/artikel1.jpg" alt="Tips Memilih Ruko" class="blog-img">
+                <img src="img/artikel1.jpg" alt="Tips Memilih Ruko" class="blog-img" width="400" height="200"
+                    loading="lazy">
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span><i class="far fa-calendar"></i> 10 Okt 2025</span>
                         <span><i class="fas fa-tag"></i> Tips Bisnis</span>
                     </div>
-                    <h3 class="blog-title">5 Tips Memilih Lokasi Ruko yang Pasti Cuan di Malang</h3>
+                    <h2 class="blog-title">5 Tips Memilih Lokasi Ruko yang Pasti Cuan di Malang</h2>
                     <p class="blog-excerpt">Lokasi adalah kunci utama keberhasilan bisnis. Pelajari faktor-faktor
                         penting seperti traffic, demografi, dan aksesibilitas sebelum membeli ruko.</p>
                     <a href="detail-artikel-1.html" class="read-more">Baca Selengkapnya <i
@@ -588,13 +664,14 @@
             </div>
 
             <div class="blog-card">
-                <img src="img/artikel2.jpg" alt="Legalitas Ruko" class="blog-img">
+                <img src="img/artikel2.jpg" alt="Legalitas Ruko" class="blog-img" width="400" height="200"
+                    loading="lazy">
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span><i class="far fa-calendar"></i> 5 Nov 2025</span>
                         <span><i class="fas fa-tag"></i> Legalitas</span>
                     </div>
-                    <h3 class="blog-title">Panduan Lengkap Mengurus Izin Usaha Ruko (OSS)</h3>
+                    <h2 class="blog-title">Panduan Lengkap Mengurus Izin Usaha Ruko (OSS)</h2>
                     <p class="blog-excerpt">Jangan sampai usaha Anda terkendala masalah izin. Simak panduan langkah demi
                         langkah mengurus NIB dan izin lokasi usaha ruko melalui sistem OSS.</p>
                     <a href="detail-artikel-2.html" class="read-more">Baca Selengkapnya <i
@@ -603,13 +680,14 @@
             </div>
 
             <div class="blog-card">
-                <img src="img/artikel3.jpg" alt="Tren Properti" class="blog-img">
+                <img src="img/artikel3.jpg" alt="Tren Properti" class="blog-img" width="400" height="200"
+                    loading="lazy">
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span><i class="far fa-calendar"></i> 12 Des 2025</span>
                         <span><i class="fas fa-tag"></i> Market Update</span>
                     </div>
-                    <h3 class="blog-title">Tren Properti Komersial Malang 2026: Apa yang Diminati?</h3>
+                    <h2 class="blog-title">Tren Properti Komersial Malang 2026: Apa yang Diminati?</h2>
                     <p class="blog-excerpt">Analisis pasar menunjukkan pergeseran tren ke arah ruko multifungsi dan
                         co-working space. Temukan peluang investasi terbaik tahun ini.</p>
                     <a href="detail-artikel-3.html" class="read-more">Baca Selengkapnya <i
@@ -618,13 +696,14 @@
             </div>
 
             <div class="blog-card">
-                <img src="img/artikel4.jpg" alt="Renovasi Ruko" class="blog-img">
+                <img src="img/artikel4.jpg" alt="Renovasi Ruko" class="blog-img" width="400" height="200"
+                    loading="lazy">
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span><i class="far fa-calendar"></i> 15 Jan 2026</span>
                         <span><i class="fas fa-tag"></i> Renovasi</span>
                     </div>
-                    <h3 class="blog-title">Tips Renovasi Ruko Tua Menjadi Cafe Instagramable</h3>
+                    <h2 class="blog-title">Tips Renovasi Ruko Tua Menjadi Cafe Instagramable</h2>
                     <p class="blog-excerpt">Ubah ruko lama Anda menjadi magnet pengunjung dengan desain industrial
                         modern. Tips hemat budget namun hasil maksimal.</p>
                     <a href="detail-artikel-4.html" class="read-more">Baca Selengkapnya <i
@@ -633,13 +712,14 @@
             </div>
 
             <div class="blog-card">
-                <img src="img/artikel5.jpg" alt="Pemasaran Ruko" class="blog-img">
+                <img src="img/artikel5.jpg" alt="Pemasaran Ruko" class="blog-img" width="400" height="200"
+                    loading="lazy">
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span><i class="far fa-calendar"></i> 22 Jan 2026</span>
                         <span><i class="fas fa-tag"></i> Pemasaran</span>
                     </div>
-                    <h3 class="blog-title">Cara Cepat Menyewakan Ruko: Strategi Pemasaran Digital</h3>
+                    <h2 class="blog-title">Cara Cepat Menyewakan Ruko: Strategi Pemasaran Digital</h2>
                     <p class="blog-excerpt">Ruko kosong terlalu lama? Pelajari cara memanfaatkan media sosial dan portal
                         properti untuk mendapatkan penyewa potensial lebih cepat.</p>
                     <a href="detail-artikel-5.html" class="read-more">Baca Selengkapnya <i
@@ -648,13 +728,14 @@
             </div>
 
             <div class="blog-card">
-                <img src="img/artikel6.jpg" alt="Pajak Properti" class="blog-img">
+                <img src="img/artikel6.jpg" alt="Pajak Properti" class="blog-img" width="400" height="200"
+                    loading="lazy">
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span><i class="far fa-calendar"></i> 30 Jan 2026</span>
                         <span><i class="fas fa-tag"></i> Keuangan</span>
                     </div>
-                    <h3 class="blog-title">Memahami Pajak Jual Beli & Sewa Ruko di Indonesia</h3>
+                    <h2 class="blog-title">Memahami Pajak Jual Beli & Sewa Ruko di Indonesia</h2>
                     <p class="blog-excerpt">Pahami perhitungan PPh Final, BPHTB, dan PBB agar tidak kaget dengan biaya
                         tambahan saat transaksi properti komersial.</p>
                     <a href="detail-artikel-6.html" class="read-more">Baca Selengkapnya <i
@@ -663,13 +744,14 @@
             </div>
 
             <div class="blog-card">
-                <img src="img/artikel7.jpg" alt="Desain Kantor" class="blog-img">
+                <img src="img/artikel7.jpg" alt="Desain Kantor" class="blog-img" width="400" height="200"
+                    loading="lazy">
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span><i class="far fa-calendar"></i> 5 Feb 2026</span>
                         <span><i class="fas fa-tag"></i> Desain Interior</span>
                     </div>
-                    <h3 class="blog-title">Inspirasi Layout Ruko untuk Kantor Startup & Agency</h3>
+                    <h2 class="blog-title">Inspirasi Layout Ruko untuk Kantor Startup & Agency</h2>
                     <p class="blog-excerpt">Maksimalkan ruang terbatas ruko menjadi kantor yang produktif dan nyaman.
                         Ide layout open space dan ruang meeting minimalis.</p>
                     <a href="detail-artikel-7.html" class="read-more">Baca Selengkapnya <i
@@ -678,13 +760,14 @@
             </div>
 
             <div class="blog-card">
-                <img src="img/artikel8.jpg" alt="Investasi Properti" class="blog-img">
+                <img src="img/artikel8.jpg" alt="Investasi Properti" class="blog-img" width="400" height="200"
+                    loading="lazy">
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span><i class="far fa-calendar"></i> 12 Feb 2026</span>
                         <span><i class="fas fa-tag"></i> Investasi</span>
                     </div>
-                    <h3 class="blog-title">Ruko vs Rumah: Mana Investasi yang Lebih Menguntungkan?</h3>
+                    <h2 class="blog-title">Ruko vs Rumah: Mana Investasi yang Lebih Menguntungkan?</h2>
                     <p class="blog-excerpt">Perbandingan ROI (Return on Investment) antara menyewakan ruko dan rumah
                         tinggal di kawasan berkembang Malang.</p>
                     <a href="detail-artikel-8.html" class="read-more">Baca Selengkapnya <i
@@ -693,13 +776,14 @@
             </div>
 
             <div class="blog-card">
-                <img src="img/artikel9.jpg" alt="Keamanan Ruko" class="blog-img">
+                <img src="img/artikel9.jpg" alt="Keamanan Ruko" class="blog-img" width="400" height="200"
+                    loading="lazy">
                 <div class="blog-content">
                     <div class="blog-meta">
                         <span><i class="far fa-calendar"></i> 18 Feb 2026</span>
                         <span><i class="fas fa-tag"></i> Tips Keamanan</span>
                     </div>
-                    <h3 class="blog-title">Standar Keamanan Ruko: CCTV, Rolling Door, & Alarm</h3>
+                    <h2 class="blog-title">Standar Keamanan Ruko: CCTV, Rolling Door, & Alarm</h2>
                     <p class="blog-excerpt">Lindungi aset bisnis Anda. Panduan memilih sistem keamanan yang tepat dan
                         efektif untuk properti ruko Anda.</p>
                     <a href="detail-artikel-9.html" class="read-more">Baca Selengkapnya <i
@@ -724,11 +808,11 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>RukoMalang</h4>
+                <h3>RukoMalang</h3>
                 <p>Jual & sewa ruko strategis di Malang dan sekitarnya.</p>
             </div>
             <div class="footer-col">
-                <h4>Link Cepat</h4>
+                <h3>Link Cepat</h3>
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="ruko.html">Listing Ruko</a></li>
@@ -737,7 +821,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Area Populer</h4>
+                <h3>Area Populer</h3>
                 <ul>
                     <li><a href="area.html#suhat">Soekarno Hatta</a></li>
                     <li><a href="area.html#dinoyo">Dinoyo</a></li>
@@ -745,14 +829,14 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Network</h4>
+                <h3>Network</h3>
                 <ul>
                     <li><a href="#">Properti Malang</a></li>
                     <li><a href="#">Investasi Properti</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Kontak</h4>
+                <h3>Kontak</h3>
                 <ul>
                     <li>📞 0895-6390-68080</li>
                     <li>✉️ info@rukomalang.com</li>
