@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Ruko Malang | Jual & Sewa Ruko Strategis & Properti Komersial</title>
+
     <meta name="description"
         content="Pusat informasi jual & sewa ruko strategis di Malang. Temukan properti komersial di Soekarno Hatta, Dinoyo, Sawojajar, dan Ijen untuk bisnis Anda.">
     <meta name="keywords"
@@ -19,49 +20,33 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ruko Malang | Jual & Sewa Ruko Strategis">
     <meta property="og:description"
-        content="Temukan ruko impian untuk bisnis Anda di lokasi premium Malang. Konsultasi gratis sekarang!">
+        content="Temukan ruko impian untuk bisnis Anda di lokasi premium Malang. Database properti terlengkap.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
     <meta property="og:url" content="https://www.rukomalang.com/">
-    <meta property="og:site_name" content="Ruko Malang">
-    <meta property="og:image" content="https://www.rukomalang.com/img/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ruko Malang | Jual & Sewa Ruko Strategis">
-    <meta name="twitter:description" content="Listing ruko terbaik di Malang untuk usaha Anda.">
-    <meta name="twitter:image" content="https://www.rukomalang.com/img/og-image.jpg">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#0f2c59">
-    <meta name="msapplication-TileColor" content="#0f2c59">
-    <meta name="theme-color" content="#ffffff">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com">
-
     <link rel="preload" as="image"
         href="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <meta name="theme-color" content="#0f2c59">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        media="print" onload="this.media='all'"> <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "RealEstateAgent",
       "name": "Ruko Malang",
-      "image": "https://www.rukomalang.com/img/logo.png",
-      "@id": "https://www.rukomalang.com",
-      "url": "https://www.rukomalang.com",
-      "telephone": "+62895639068080",
+      "image": "img/logo.png",
+      "description": "Agen properti spesialis jual beli dan sewa ruko di Malang Raya.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Jl. Veteran No. 10",
@@ -70,25 +55,10 @@
         "postalCode": "65145",
         "addressCountry": "ID"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -7.9575,
-        "longitude": 112.6144
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "08:00",
-        "closes": "17:00"
-      },
-      "priceRange": "$$"
+      "telephone": "+62895639068080",
+      "url": "https://www.rukomalang.com",
+      "areaServed": ["Malang", "Batu", "Kepanjen"],
+      "priceRange": "$$$"
     }
     </script>
 
@@ -101,6 +71,7 @@
             --secondary: #ff9f1c;
             --light: #f5f7fa;
             --dark: #1a1a1a;
+            --gray: #e0e0e0;
         }
 
         * {
@@ -118,20 +89,6 @@
             overflow-x: hidden;
             width: 100%;
             scroll-behavior: smooth;
-            /* Tambahan untuk scroll top smooth */
-        }
-
-        /* Utility Class untuk SEO Hidden Heading */
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
         }
 
         /* =========================================
@@ -147,8 +104,6 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            /* Optimasi CLS */
-            min-height: 70px;
         }
 
         header .logo-link img {
@@ -156,9 +111,6 @@
             width: auto;
             display: block;
         }
-
-        /* Tambahan H1 kecil di header untuk struktur jika Hero H1 tidak terbaca, 
-           tapi karena Hero sudah H1, ini opsional atau bisa jadi div */
 
         nav {
             display: flex;
@@ -207,22 +159,18 @@
             background: linear-gradient(135deg, rgba(15, 44, 89, 0.85), rgba(15, 44, 89, 0.7)),
                 url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
             color: #fff;
-
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-
             min-height: 70vh;
             padding: 80px 20px 120px;
             text-align: center;
             position: relative;
-            /* Optimasi LCP: Memastikan text terbaca saat font loading */
             font-display: swap;
         }
 
-        /* H1 Utama Halaman */
-        .hero h1 {
+        .hero h2 {
             font-size: 2.8rem;
             max-width: 800px;
             margin: 0 auto 10px;
@@ -418,6 +366,17 @@
         /* =========================================
            6. RUKO TERLARIS (GRID)
            ========================================= */
+        .section {
+            padding: 50px 20px;
+        }
+
+        .section h2 {
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
         .listing-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -471,7 +430,6 @@
             background: #28a745;
         }
 
-        /* H3 untuk judul Card */
         .card h3 {
             font-size: 18px;
             margin-bottom: 5px;
@@ -512,7 +470,7 @@
         }
 
         /* =========================================
-           7. OTHER SECTIONS
+           7. OTHER SECTIONS (Stats, Area, Footer)
            ========================================= */
         .stats-main {
             display: grid;
@@ -545,7 +503,6 @@
             transform: translateY(-4px);
         }
 
-        /* H3 untuk Stats */
         .stat-box h3 {
             font-size: 24px;
             color: var(--primary);
@@ -565,18 +522,7 @@
             font-weight: 500;
         }
 
-        .section {
-            padding: 50px 20px;
-        }
-
-        /* H2 untuk Judul Section */
-        .section h2 {
-            font-size: 26px;
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary);
-        }
-
+        /* Area Populer Grid */
         .listing {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -620,7 +566,6 @@
             color: #fff;
         }
 
-        /* H3 untuk Area Title */
         .area-overlay h3 {
             font-size: 20px;
             margin-bottom: 3px;
@@ -651,7 +596,6 @@
             margin-bottom: 0;
         }
 
-        /* H2 untuk CTA */
         .cta h2 {
             font-size: 24px;
             margin-bottom: 10px;
@@ -686,7 +630,6 @@
             padding: 40px 20px 20px;
         }
 
-        /* H4 untuk Footer (Benar secara hierarki jika section sebelumnya H2) */
         .footer-col h4 {
             color: #ff9f1c;
             margin-bottom: 12px;
@@ -738,7 +681,78 @@
         }
 
         /* =========================================
-           8. RESPONSIVE
+           8. FLOATING BUTTONS (WA & SCROLL TOP)
+           ========================================= */
+        .floating-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .wa-btn {
+            background-color: #25d366;
+        }
+
+        .scroll-top-btn {
+            background-color: var(--primary);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .scroll-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Tooltip simple */
+        .float-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+
+        .float-btn:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* =========================================
+           9. RESPONSIVE
            ========================================= */
         @media (max-width: 992px) {
             .slider-container {
@@ -803,8 +817,7 @@
                 padding-bottom: 80px;
             }
 
-            /* Update: Responsive untuk H1 */
-            .hero h1 {
+            .hero h2 {
                 font-size: 1.8rem;
             }
 
@@ -886,6 +899,18 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            /* Adjust floating button position on mobile */
+            .floating-container {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .float-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
         }
 
         @media (min-width: 768px) {
@@ -933,8 +958,8 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo-link" aria-label="Beranda Ruko Malang">
-            <img src="img/logo.png" alt="Logo Ruko Malang" width="150" height="50">
+        <a href="index.html" class="logo-link" aria-label="Halaman Utama">
+            <img src="img/logo.png" alt="Logo Ruko Malang - Agen Properti Terpercaya" width="150" height="50">
         </a>
 
         <label for="nav-toggle" class="nav-toggle-btn" aria-label="Buka Menu">☰</label>
@@ -946,237 +971,238 @@
             <a href="blog.html">Blog</a>
             <a href="kontak.html">Kontak</a>
             <a href="https://wa.me/62895639068080?text=Halo%20Admin%20RukoMalang,%20saya%20tertarik%20untuk%20memasang%20iklan%20properti%20ruko%20saya"
-                target="_blank" class="btn-primary" rel="noopener">Pasang Iklan</a>
+                target="_blank" class="btn-primary" aria-label="Pasang Iklan via WhatsApp">Pasang Iklan</a>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Jual & Sewa Ruko Strategis di Malang</h1>
-            <p>Lokasi premium, harga kompetitif, siap untuk berbagai jenis usaha.</p>
+    <section class="hero">
+        <h1>Jual & Sewa Ruko Strategis di Malang</h1>
+        <p>Lokasi premium, harga kompetitif, siap untuk berbagai jenis usaha.</p>
 
-            <div class="search-box">
-                <select id="lokasi" aria-label="Pilih Lokasi Ruko">
-                    <option value="" disabled selected hidden>Pilih Lokasi yang Anda Cari</option>
-                    <option value="suhat">Soekarno Hatta</option>
-                    <option value="dinoyo">Dinoyo</option>
-                    <option value="lowokwaru">Lowokwaru</option>
-                    <option value="sawojajar">Sawojajar</option>
-                    <option value="ijen">Ijen / Klojen</option>
-                </select>
-                <button onclick="cariRuko()">Cari Ruko <i class="fas fa-search"></i></button>
-            </div>
-        </section>
+        <div class="search-box">
+            <label for="lokasi" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden;">Pilih
+                Lokasi</label>
+            <select id="lokasi" aria-label="Pilih Lokasi Ruko">
+                <option value="" disabled selected hidden>Pilih Lokasi yang Anda Cari</option>
+                <option value="suhat">Soekarno Hatta</option>
+                <option value="dinoyo">Dinoyo</option>
+                <option value="lowokwaru">Lowokwaru</option>
+                <option value="sawojajar">Sawojajar</option>
+                <option value="ijen">Ijen / Klojen</option>
+            </select>
+            <button onclick="cariRuko()" aria-label="Cari Ruko">Cari Ruko <i class="fas fa-search"></i></button>
+        </div>
+    </section>
 
-        <h2 class="visually-hidden">Promo Unggulan</h2>
-        <section class="promo-section">
-            <div class="slider-container">
-                <div class="slider-wrapper" id="sliderWrapper">
+    <section class="promo-section">
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
 
-                    <div class="slide">
-                        <img src="img/satu.jpg" alt="Promo Sewa Ruko Malang" width="1000" height="312" loading="eager">
-                        <div class="slide-content">
-                            <h3>Promo Awal Tahun 2026</h3>
-                            <p>Dapatkan diskon sewa hingga 10% untuk ruko di kawasan Dinoyo.</p>
-                        </div>
-                    </div>
-
-                    <div class="slide">
-                        <img src="img/dua.jpg" alt="Ruko Bisnis Suhat Malang" width="1000" height="312" loading="lazy">
-                        <div class="slide-content">
-                            <h3>Listing Baru: Suhat Premium</h3>
-                            <p>Ruko 3 lantai nol jalan raya, cocok untuk kantor & cafe.</p>
-                        </div>
-                    </div>
-
-                    <div class="slide">
-                        <img src="img/tiga.jpg" alt="Investasi Properti Malang" width="1000" height="312"
-                            loading="lazy">
-                        <div class="slide-content">
-                            <h3>Investasi Cerdas</h3>
-                            <p>Konsultasi gratis ROI properti komersial bersama tim ahli kami.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="slider-nav">
-                    <div class="nav-dot active" onclick="goToSlide(0)"></div>
-                    <div class="nav-dot" onclick="goToSlide(1)"></div>
-                    <div class="nav-dot" onclick="goToSlide(2)"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Ruko Terlaris</h2>
-            <div class="listing-grid">
-
-                <div class="card" onclick="window.location.href='detail-ruko-suhat.html'" style="cursor: pointer;">
-                    <img src="img/rumah1.jpg" alt="Ruko Dijual Soekarno Hatta Malang" width="300" height="200"
-                        loading="lazy" />
-                    <div class="card-body">
-                        <span class="badge">Dijual</span>
-                        <h3>Ruko Soekarno Hatta</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt"></i> Lowokwaru, Malang</div>
-                        <span class="price">Rp 850 Juta</span>
-                        <div class="card-specs">
-                            <span><i class="fas fa-ruler-combined"></i> 90 m²</span>
-                            <span><i class="fas fa-building"></i> 2 Lt</span>
-                            <span><i class="fas fa-bath"></i> 1 KM</span>
-                        </div>
+                <div class="slide">
+                    <img src="img/satu.jpg" alt="Promo Sewa Ruko Dinoyo Malang - Diskon Awal Tahun" loading="lazy"
+                        width="1000" height="312">
+                    <div class="slide-content">
+                        <h3>Promo Awal Tahun 2026</h3>
+                        <p>Dapatkan diskon sewa hingga 10% untuk ruko di kawasan Dinoyo.</p>
                     </div>
                 </div>
 
-                <div class="card" onclick="window.location.href='detail-ruko-dinoyo.html'" style="cursor: pointer;">
-                    <img src="img/rumah2.jpg" alt="Sewa Ruko Strategis Dinoyo" width="300" height="200"
-                        loading="lazy" />
-                    <div class="card-body">
-                        <span class="badge sewa">Disewa</span>
-                        <h3>Ruko Strategis Dinoyo</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt"></i> Dinoyo, Malang</div>
-                        <span class="price">Rp 60 Jt / Thn</span>
-                        <div class="card-specs">
-                            <span><i class="fas fa-ruler-combined"></i> 75 m²</span>
-                            <span><i class="fas fa-building"></i> 2 Lt</span>
-                            <span><i class="fas fa-bath"></i> 1 KM</span>
-                        </div>
+                <div class="slide">
+                    <img src="img/dua.jpg" alt="Ruko Bisnis Soekarno Hatta Malang - Listing Premium" loading="lazy"
+                        width="1000" height="312">
+                    <div class="slide-content">
+                        <h3>Listing Baru: Suhat Premium</h3>
+                        <p>Ruko 3 lantai nol jalan raya, cocok untuk kantor & cafe.</p>
                     </div>
                 </div>
 
-                <div class="card" onclick="window.location.href='detail-ruko-kayutangan.html'" style="cursor: pointer;">
-                    <img src="img/rumah1.jpg" alt="Kios Kayutangan Heritage" width="300" height="200" loading="lazy" />
-                    <div class="card-body">
-                        <span class="badge sewa">Disewa</span>
-                        <h3>Kios Kayutangan Heritage</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt"></i> Klojen, Malang</div>
-                        <span class="price">Rp 120 Jt / Thn</span>
-                        <div class="card-specs">
-                            <span><i class="fas fa-ruler-combined"></i> 50 m²</span>
-                            <span><i class="fas fa-building"></i> 1 Lt</span>
-                            <span><i class="fas fa-bath"></i> 1 KM</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" onclick="window.location.href='detail-ruko-blimbing.html'" style="cursor: pointer;">
-                    <img src="img/rumah3.jpg" alt="Ruko Dijual Blimbing Malang" width="300" height="200"
-                        loading="lazy" />
-                    <div class="card-body">
-                        <span class="badge">Dijual</span>
-                        <h3>Ruko Siap Pakai Blimbing</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt"></i> Blimbing, Malang</div>
-                        <span class="price">Rp 950 Juta</span>
-                        <div class="card-specs">
-                            <span><i class="fas fa-ruler-combined"></i> 100 m²</span>
-                            <span><i class="fas fa-building"></i> 2 Lt</span>
-                            <span><i class="fas fa-bath"></i> 1 KM</span>
-                        </div>
+                <div class="slide">
+                    <img src="img/tiga.jpg" alt="Investasi Properti Komersial Malang - Konsultasi ROI" loading="lazy"
+                        width="1000" height="312">
+                    <div class="slide-content">
+                        <h3>Investasi Cerdas</h3>
+                        <p>Konsultasi gratis ROI properti komersial bersama tim ahli kami.</p>
                     </div>
                 </div>
 
             </div>
-        </section>
 
-        <h2 class="visually-hidden">Statistik Kami</h2>
-        <section class="stats-main">
-            <div class="stat-box">
-                <h3>120+</h3>
-                <p>Ruko Tersedia</p>
+            <div class="slider-nav">
+                <div class="nav-dot active" onclick="goToSlide(0)" role="button" aria-label="Slide 1"></div>
+                <div class="nav-dot" onclick="goToSlide(1)" role="button" aria-label="Slide 2"></div>
+                <div class="nav-dot" onclick="goToSlide(2)" role="button" aria-label="Slide 3"></div>
             </div>
-            <div class="stat-box">
-                <h3>15</h3>
-                <p>Area Strategis</p>
-            </div>
-            <div class="stat-box">
-                <h3>50+</h3>
-                <p>Klien Puas</p>
-            </div>
-            <div class="stat-box">
-                <h3>4.9</h3>
-                <p>Rating</p>
-            </div>
-            <div class="stat-box">
-                <h3>7 Tahun</h3>
-                <p>Berpengalaman</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Jelajahi Area Populer</h2>
-            <div class="listing">
-                <a href="area.html#suhat" class="area-card">
-                    <img src="img/rumah1.jpg" alt="Ruko area Soekarno Hatta" width="300" height="250" loading="lazy" />
-                    <div class="area-overlay">
-                        <h3>Soekarno Hatta</h3>
-                        <p>Pusat Bisnis & Kuliner <i class="fas fa-arrow-right"></i></p>
-                    </div>
-                </a>
-                <a href="area.html#dinoyo" class="area-card">
-                    <img src="img/rumah2.jpg" alt="Ruko area Dinoyo" width="300" height="250" loading="lazy" />
-                    <div class="area-overlay">
-                        <h3>Dinoyo</h3>
-                        <p>Kawasan Kampus & Retail <i class="fas fa-arrow-right"></i></p>
-                    </div>
-                </a>
-                <a href="area.html#ijen" class="area-card">
-                    <img src="img/rumah1.jpg" alt="Ruko area Ijen Boulevard" width="300" height="250" loading="lazy" />
-                    <div class="area-overlay">
-                        <h3>Ijen & Klojen</h3>
-                        <p>Premium & Heritage <i class="fas fa-arrow-right"></i></p>
-                    </div>
-                </a>
-                <a href="area.html#sawojajar" class="area-card">
-                    <img src="img/rumah2.jpg" alt="Ruko area Sawojajar" width="300" height="250" loading="lazy" />
-                    <div class="area-overlay">
-                        <h3>Sawojajar</h3>
-                        <p>Pemukiman & Daily Needs <i class="fas fa-arrow-right"></i></p>
-                    </div>
-                </a>
-            </div>
-        </section>
+    <section class="section">
+        <h2>Ruko Terlaris</h2>
+        <div class="listing-grid">
 
-        <section class="section">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 30px;">Keunggulan Kami</h2>
-                <div class="stats-features">
-                    <div class="stat-box">
-                        <i class="fas fa-map-location-dot"></i>
-                        <p>Lokasi Strategis</p>
-                    </div>
-                    <div class="stat-box">
-                        <i class="fas fa-shield-halved"></i>
-                        <p>Legalitas Aman</p>
-                    </div>
-                    <div class="stat-box">
-                        <i class="fas fa-tags"></i>
-                        <p>Harga Transparan</p>
-                    </div>
-                    <div class="stat-box">
-                        <i class="fas fa-headset"></i>
-                        <p>Konsultasi Gratis</p>
+            <div class="card" onclick="window.location.href='detail-ruko-suhat.html'" style="cursor: pointer;">
+                <img src="img/rumah1.jpg" alt="Jual Ruko Soekarno Hatta Malang 2 Lantai" loading="lazy" width="300"
+                    height="200" />
+                <div class="card-body">
+                    <span class="badge">Dijual</span>
+                    <h3>Ruko Soekarno Hatta</h3>
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Lowokwaru, Malang</div>
+                    <span class="price">Rp 850 Juta</span>
+                    <div class="card-specs">
+                        <span><i class="fas fa-ruler-combined"></i> 90 m²</span>
+                        <span><i class="fas fa-building"></i> 2 Lt</span>
+                        <span><i class="fas fa-bath"></i> 1 KM</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <h2 class="visually-hidden">Info Promo Lainnya</h2>
-        <section class="promo1-section">
-            <div class="slider-container">
-                <div class="slider-wrapper">
-                    <div class="slide">
-                        <img src="img/promo.gif" alt="Promo Ruko Malang" width="1000" height="300" loading="lazy">
+            <div class="card" onclick="window.location.href='detail-ruko-dinoyo.html'" style="cursor: pointer;">
+                <img src="img/rumah2.jpg" alt="Sewa Ruko Dinoyo Malang Dekat Kampus" loading="lazy" width="300"
+                    height="200" />
+                <div class="card-body">
+                    <span class="badge sewa">Disewa</span>
+                    <h3>Ruko Strategis Dinoyo</h3>
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Dinoyo, Malang</div>
+                    <span class="price">Rp 60 Jt / Thn</span>
+                    <div class="card-specs">
+                        <span><i class="fas fa-ruler-combined"></i> 75 m²</span>
+                        <span><i class="fas fa-building"></i> 2 Lt</span>
+                        <span><i class="fas fa-bath"></i> 1 KM</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="cta">
-            <h2>Butuh Ruko untuk Bisnis Anda?</h2>
-            <p>Konsultasi gratis & survey lokasi sekarang juga</p>
-            <a href="kontak.html">Hubungi Kami</a>
-        </section>
-    </main>
+            <div class="card" onclick="window.location.href='detail-ruko-kayutangan.html'" style="cursor: pointer;">
+                <img src="img/rumah1.jpg" alt="Sewa Kios Kayutangan Heritage Malang" loading="lazy" width="300"
+                    height="200" />
+                <div class="card-body">
+                    <span class="badge sewa">Disewa</span>
+                    <h3>Kios Kayutangan Heritage</h3>
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Klojen, Malang</div>
+                    <span class="price">Rp 120 Jt / Thn</span>
+                    <div class="card-specs">
+                        <span><i class="fas fa-ruler-combined"></i> 50 m²</span>
+                        <span><i class="fas fa-building"></i> 1 Lt</span>
+                        <span><i class="fas fa-bath"></i> 1 KM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="window.location.href='detail-ruko-blimbing.html'" style="cursor: pointer;">
+                <img src="img/rumah3.jpg" alt="Jual Ruko Blimbing Malang Siap Pakai" loading="lazy" width="300"
+                    height="200" />
+                <div class="card-body">
+                    <span class="badge">Dijual</span>
+                    <h3>Ruko Siap Pakai Blimbing</h3>
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Blimbing, Malang</div>
+                    <span class="price">Rp 950 Juta</span>
+                    <div class="card-specs">
+                        <span><i class="fas fa-ruler-combined"></i> 100 m²</span>
+                        <span><i class="fas fa-building"></i> 2 Lt</span>
+                        <span><i class="fas fa-bath"></i> 1 KM</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="stats-main">
+        <div class="stat-box">
+            <h3>120+</h3>
+            <p>Ruko Tersedia</p>
+        </div>
+        <div class="stat-box">
+            <h3>15</h3>
+            <p>Area Strategis</p>
+        </div>
+        <div class="stat-box">
+            <h3>50+</h3>
+            <p>Klien Puas</p>
+        </div>
+        <div class="stat-box">
+            <h3>4.9</h3>
+            <p>Rating</p>
+        </div>
+        <div class="stat-box">
+            <h3>7 Tahun</h3>
+            <p>Berpengalaman</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Jelajahi Area Populer</h2>
+        <div class="listing">
+            <a href="area.html#suhat" class="area-card">
+                <img src="img/rumah1.jpg" alt="Area Ruko Soekarno Hatta Malang" loading="lazy" width="300"
+                    height="250" />
+                <div class="area-overlay">
+                    <h3>Soekarno Hatta</h3>
+                    <p>Pusat Bisnis & Kuliner <i class="fas fa-arrow-right"></i></p>
+                </div>
+            </a>
+            <a href="area.html#dinoyo" class="area-card">
+                <img src="img/rumah2.jpg" alt="Area Ruko Dinoyo Malang" loading="lazy" width="300" height="250" />
+                <div class="area-overlay">
+                    <h3>Dinoyo</h3>
+                    <p>Kawasan Kampus & Retail <i class="fas fa-arrow-right"></i></p>
+                </div>
+            </a>
+            <a href="area.html#ijen" class="area-card">
+                <img src="img/rumah1.jpg" alt="Area Ruko Ijen Malang" loading="lazy" width="300" height="250" />
+                <div class="area-overlay">
+                    <h3>Ijen & Klojen</h3>
+                    <p>Premium & Heritage <i class="fas fa-arrow-right"></i></p>
+                </div>
+            </a>
+            <a href="area.html#sawojajar" class="area-card">
+                <img src="img/rumah2.jpg" alt="Area Ruko Sawojajar Malang" loading="lazy" width="300" height="250" />
+                <div class="area-overlay">
+                    <h3>Sawojajar</h3>
+                    <p>Pemukiman & Daily Needs <i class="fas fa-arrow-right"></i></p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 30px;">Keunggulan Kami</h2>
+            <div class="stats-features">
+                <div class="stat-box">
+                    <i class="fas fa-map-location-dot"></i>
+                    <p>Lokasi Strategis</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-shield-halved"></i>
+                    <p>Legalitas Aman</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-tags"></i>
+                    <p>Harga Transparan</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-headset"></i>
+                    <p>Konsultasi Gratis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="promo1-section">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slide">
+                    <img src="img/promo.gif" alt="Promo Ruko Spesial" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Butuh Ruko untuk Bisnis Anda?</h2>
+        <p>Konsultasi gratis & survey lokasi sekarang juga</p>
+        <a href="kontak.html" class="btn-primary" style="margin-top: 20px;">Hubungi Kami</a>
+    </section>
 
     <footer>
         <div class="footer-grid">
@@ -1248,9 +1274,8 @@
             window.location.href = `ruko.html?lokasi=${lokasi}`;
         }
 
-        /* -----------------------------------------------
-           SCRIPT SLIDER: DRAGGABLE + AUTO SCROLL LOOP
-           ----------------------------------------------- */
+        // --- SCRIPT SLIDER & SCROLL --- //
+
         const slider = document.getElementById('sliderWrapper');
         const dots = document.querySelectorAll('.nav-dot');
         let isDown = false;
@@ -1258,64 +1283,50 @@
         let scrollLeft;
         let autoScrollInterval;
 
-        // 1. DRAG TO SCROLL (MOUSE)
+        // Mouse Events
         if (slider) {
             slider.addEventListener('mousedown', (e) => {
                 isDown = true;
                 slider.classList.add('dragging');
                 startX = e.pageX - slider.offsetLeft;
                 scrollLeft = slider.scrollLeft;
-                clearInterval(autoScrollInterval); // Pause auto scroll
+                clearInterval(autoScrollInterval);
             });
-
             slider.addEventListener('mouseleave', () => {
                 if (!isDown) return;
                 isDown = false;
                 slider.classList.remove('dragging');
-                startAutoScroll(); // Resume
+                startAutoScroll();
             });
-
             slider.addEventListener('mouseup', () => {
                 isDown = false;
                 slider.classList.remove('dragging');
-                startAutoScroll(); // Resume
+                startAutoScroll();
             });
-
             slider.addEventListener('mousemove', (e) => {
                 if (!isDown) return;
                 e.preventDefault();
                 const x = e.pageX - slider.offsetLeft;
-                const walk = (x - startX) * 2; // Kecepatan scroll
+                const walk = (x - startX) * 2;
                 slider.scrollLeft = scrollLeft - walk;
             });
-
-            // 2. TOUCH EVENTS (MOBILE SWIPE) - Added Passive Listener for Performance
-            slider.addEventListener('touchstart', () => clearInterval(autoScrollInterval), { passive: true });
+            // Touch Events
+            slider.addEventListener('touchstart', () => clearInterval(autoScrollInterval));
             slider.addEventListener('touchend', () => startAutoScroll());
         }
 
-        // 3. AUTO SCROLL FUNCTION
         function startAutoScroll() {
             clearInterval(autoScrollInterval);
             autoScrollInterval = setInterval(() => {
                 if (!slider) return;
                 const maxScroll = slider.scrollWidth - slider.clientWidth;
-
                 if (slider.scrollLeft >= maxScroll - 10) {
-                    slider.scrollTo({
-                        left: 0,
-                        behavior: 'smooth'
-                    });
+                    slider.scrollTo({ left: 0, behavior: 'smooth' });
                     updateDots(0);
                 } else {
                     const slideWidth = slider.clientWidth;
                     const nextPosition = slider.scrollLeft + slideWidth;
-
-                    slider.scrollTo({
-                        left: nextPosition,
-                        behavior: 'smooth'
-                    });
-
+                    slider.scrollTo({ left: nextPosition, behavior: 'smooth' });
                     setTimeout(() => {
                         const newIndex = Math.round(slider.scrollLeft / slider.clientWidth);
                         const safeIndex = (newIndex + 1) >= dots.length ? 0 : newIndex + 1;
@@ -1325,7 +1336,6 @@
             }, 4000);
         }
 
-        // 4. DOT NAVIGATION
         function updateDots(index) {
             dots.forEach(d => d.classList.remove('active'));
             if (dots[index]) dots[index].classList.add('active');
@@ -1334,15 +1344,12 @@
         function goToSlide(index) {
             if (!slider) return;
             const slideWidth = slider.clientWidth;
-            slider.scrollTo({
-                left: index * slideWidth,
-                behavior: 'smooth'
-            });
+            slider.scrollTo({ left: index * slideWidth, behavior: 'smooth' });
             updateDots(index);
             startAutoScroll();
         }
 
-        // Jalankan saat load
+        // Jalankan slider saat load
         startAutoScroll();
 
         // --- SCRIPT SCROLL TO TOP --- //

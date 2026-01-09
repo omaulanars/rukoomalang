@@ -4,13 +4,58 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>Inspirasi Layout Ruko untuk Kantor Startup | Ruko Malang</title>
+    <meta name="description"
+        content="Inspirasi desain layout ruko untuk kantor startup dan agency kreatif. Tips konsep open plan, meeting pod, dan pencahayaan alami di ruko memanjang.">
+    <meta name="keywords"
+        content="layout kantor ruko, desain interior startup, renovasi ruko jadi kantor, office layout malang, interior design ruko">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.rukomalang.com/detail-artikel-7.html" />
+    <meta name="author" content="Satria - Ruko Malang">
+
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Inspirasi Layout Ruko untuk Kantor Startup & Agency">
+    <meta property="og:description" content="Ubah ruko sempit menjadi kantor modern yang nyaman dan produktif.">
+    <meta property="og:url" content="https://www.rukomalang.com/detail-artikel-7.html">
+    <meta property="og:site_name" content="Ruko Malang">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c">
+    <meta property="article:published_time" content="2026-02-05T08:00:00+07:00">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0f2c59">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.rukomalang.com/detail-artikel-7.html" },
+      "headline": "Inspirasi Layout Ruko untuk Kantor Startup & Agency",
+      "image": "https://images.unsplash.com/photo-1497366216548-37526070297c",
+      "author": { "@type": "Person", "name": "Satria" },
+      "publisher": { "@type": "Organization", "name": "Ruko Malang", "logo": { "@type": "ImageObject", "url": "https://www.rukomalang.com/img/logo.png" } },
+      "datePublished": "2026-02-05",
+      "dateModified": "2026-02-05"
+    }
+    </script>
 
     <style>
-        /* ================= VARIABLES & RESET ================= */
+        /* [VARIABLES & RESET] */
         :root {
             --primary: #0f2c59;
             --secondary: #ff9f1c;
@@ -32,10 +77,10 @@
             line-height: 1.8;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            /* Tambahan scroll smooth */
+            font-display: swap;
         }
 
-        /* ================= HEADER & NAV ================= */
+        /* [HEADER, NAV, SEARCH] */
         header {
             background: #fff;
             padding: 15px 40px;
@@ -53,6 +98,7 @@
             color: var(--primary);
         }
 
+        /* Note: Using h1 here for logo text fallback, usually img is better, but following your provided file */
         nav {
             display: flex;
             align-items: center;
@@ -86,7 +132,11 @@
             transform: translateY(-2px);
         }
 
-        /* ================= SEARCH BAR ================= */
+        .nav-toggle,
+        .nav-toggle-btn {
+            display: none;
+        }
+
         .search-section {
             padding: 40px 20px 20px;
             background: var(--primary);
@@ -119,7 +169,7 @@
             font-size: 18px;
         }
 
-        /* ================= ARTICLE CONTENT (FULL WIDTH) ================= */
+        /* [ARTICLE STYLES] */
         .article-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -183,11 +233,13 @@
             margin: 0 auto;
         }
 
-        .article-body h3 {
+        /* HIERARCHY FIX: H3 -> H2 */
+        .article-body h2 {
             color: var(--primary);
             margin-top: 40px;
             margin-bottom: 15px;
             font-size: 26px;
+            font-weight: 700;
         }
 
         .article-body p {
@@ -196,7 +248,7 @@
             line-height: 1.8;
         }
 
-        /* --- Table of Content --- */
+        /* [COMPONENTS] */
         .toc-box {
             background: #fff;
             border-left: 5px solid var(--secondary);
@@ -249,7 +301,6 @@
             margin-left: 5px;
         }
 
-        /* --- Baca Juga --- */
         .read-also {
             background: #fff;
             border-radius: 10px;
@@ -271,7 +322,6 @@
             text-decoration: underline;
         }
 
-        /* --- Quote --- */
         .quote-box {
             font-size: 20px;
             font-style: italic;
@@ -292,13 +342,20 @@
             display: block;
         }
 
-        /* --- FAQ --- */
         .faq-section {
             margin-top: 60px;
             background: #fff;
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-section h2 {
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
         }
 
         .faq-item {
@@ -340,7 +397,6 @@
             line-height: 1.6;
         }
 
-        /* --- Author & Share --- */
         .author-box {
             display: flex;
             align-items: center;
@@ -408,7 +464,6 @@
             transform: translateY(-3px);
         }
 
-        /* ================= RELATED ARTICLES ================= */
         .related-section {
             max-width: 1200px;
             margin: 80px auto;
@@ -467,7 +522,32 @@
             text-decoration: none;
         }
 
-        /* ================= FOOTER ================= */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 60px;
+        }
+
+        .page-nav {
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .page-nav:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
         footer {
             background: #0a1f3f;
             color: #b0c0d8;
@@ -518,9 +598,6 @@
             font-size: 13px;
         }
 
-        /* =========================================
-           FLOATING BUTTONS (WA & SCROLL TOP)
-           ========================================= */
         .floating-container {
             position: fixed;
             bottom: 25px;
@@ -569,7 +646,6 @@
             transform: translateY(0);
         }
 
-        /* Tooltip simple */
         .float-btn::before {
             content: attr(data-tooltip);
             position: absolute;
@@ -590,7 +666,6 @@
             visibility: visible;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             header {
                 padding: 15px 20px;
@@ -625,7 +700,6 @@
                 text-align: center;
             }
 
-            /* Adjust floating button position on mobile */
             .floating-container {
                 bottom: 20px;
                 right: 20px;
@@ -663,7 +737,7 @@
         <div class="search-box">
             <i class="fas fa-search" style="color: #999; margin-right: 10px;"></i>
             <input type="text" placeholder="Cari artikel lain...">
-            <button><i class="fas fa-arrow-right"></i></button>
+            <button aria-label="Cari"><i class="fas fa-arrow-right"></i></button>
         </div>
     </div>
 
@@ -679,7 +753,7 @@
         </div>
 
         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Layout Kantor Ruko Modern"
-            class="featured-img">
+            class="featured-img" width="1200" height="500" loading="eager">
 
         <div class="article-body">
 
@@ -703,7 +777,7 @@
                 startup yang dinamis, produktif, dan tentunya estetik. Kuncinya adalah efisiensi ruang dan pencahayaan.
             </p>
 
-            <h3 id="openplan">1. Konsep Open Plan untuk Kolaborasi</h3>
+            <h2 id="openplan">1. Konsep Open Plan untuk Kolaborasi</h2>
             <p>Untuk mengatasi kesan sempit, hindari penggunaan sekat tembok masif. Gunakan konsep <em>open plan</em> di
                 mana meja kerja disusun berkelompok tanpa partisi tinggi. Ini tidak hanya membuat ruangan terasa lebih
                 luas, tetapi juga mendorong komunikasi dan kolaborasi antar tim yang sangat krusial bagi budaya kerja
@@ -713,15 +787,15 @@
                 Baca Juga: <a href="detail-artikel-4.html">Tips Renovasi Ruko Tua Menjadi Cafe Instagramable</a>
             </div>
 
-            <h3 id="pod">2. Meeting Pod & Phone Booth</h3>
+            <h2 id="pod">2. Meeting Pod & Phone Booth</h2>
             <p>Kelemahan konsep terbuka adalah kebisingan. Solusinya, buatlah 1-2 ruang kecil kedap suara (phone booth)
                 berukuran 1x1 meter untuk panggilan telepon penting atau meeting online. Untuk meeting tim, gunakan
                 partisi kaca agar visual tetap tembus pandang namun suara terisolasi.</p>
 
             <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36" alt="Desain Interior Startup"
-                class="content-img">
+                class="content-img" width="800" height="400" loading="lazy">
 
-            <h3 id="vertikal">3. Pembagian Zona Vertikal</h3>
+            <h2 id="vertikal">3. Pembagian Zona Vertikal</h2>
             <p>Manfaatkan ketinggian ruko yang biasanya terdiri dari 2-3 lantai.
                 <br>
                 <strong>Lantai 1:</strong> Area publik (resepsionis, ruang meeting tamu, pantry).
@@ -737,13 +811,13 @@
                 produktivitas tim Anda."
             </div>
 
-            <h3 id="pencahayaan">4. Memaksimalkan Cahaya Alami</h3>
+            <h2 id="pencahayaan">4. Memaksimalkan Cahaya Alami</h2>
             <p>Karena ruko minim jendela samping, maksimalkan jendela depan dan belakang. Tempatkan meja kerja utama di
                 dekat sumber cahaya. Gunakan cat dinding warna putih atau warna terang untuk memantulkan cahaya ke
                 seluruh ruangan. Cermin besar di salah satu sisi dinding juga bisa menciptakan ilusi ruang yang lebih
                 luas.</p>
 
-            <h3 id="pantry">5. Pantry sebagai Pusat Interaksi</h3>
+            <h2 id="pantry">5. Pantry sebagai Pusat Interaksi</h2>
             <p>Jangan sembunyikan pantry di pojok gelap. Buat pantry yang nyaman dengan meja bar kecil. Di startup,
                 pantry seringkali menjadi tempat lahirnya ide-ide kreatif saat tim sedang rehat kopi.</p>
 
@@ -751,7 +825,7 @@
                 rumah kedua yang nyaman bagi tim Anda untuk berkarya.</p>
 
             <div class="faq-section" id="faq">
-                <h3>Pertanyaan Umum (FAQ)</h3>
+                <h2>Pertanyaan Umum (FAQ)</h2>
                 <details class="faq-item">
                     <summary>Berapa luas ideal meja kerja per karyawan?</summary>
                     <p>Untuk kenyamanan, alokasikan sekitar 120-140 cm panjang meja per orang, dengan jarak sirkulasi
@@ -766,7 +840,7 @@
 
             <div class="author-box">
                 <img src="https://ui-avatars.com/api/?name=Satria&background=0f2c59&color=fff" alt="Satria"
-                    class="author-img">
+                    class="author-img" loading="lazy">
                 <div class="author-info">
                     <h4>Ditulis oleh: Satria</h4>
                     <p>Ahli strategi properti komersial dengan pengalaman 5 tahun di pasar real estate Jawa Timur.
@@ -777,10 +851,10 @@
             <div class="share-box">
                 <p>Bagikan artikel ini:</p>
                 <div class="share-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Share ke Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Share ke WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Share ke Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Share ke LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
 
@@ -791,21 +865,24 @@
         <h3>Artikel Terkait</h3>
         <div class="blog-grid">
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd" class="blog-img">
+                <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd" class="blog-img"
+                    alt="Tren Properti" loading="lazy">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Tren Properti Komersial Malang 2026</h4>
                     <a href="detail-artikel-3.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1581578731117-10d52143b0d8" class="blog-img">
+                <img src="https://images.unsplash.com/photo-1581578731117-10d52143b0d8" class="blog-img"
+                    alt="Tips Renovasi" loading="lazy">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Tips Renovasi Ruko Tua</h4>
                     <a href="detail-artikel-4.html" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" class="blog-img">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0" class="blog-img"
+                    alt="Cara Sewakan Ruko" loading="lazy">
                 <div class="blog-content">
                     <h4 class="blog-title-sm">Cara Cepat Menyewakan Ruko</h4>
                     <a href="detail-artikel-5.html" class="read-more-sm">Baca Selengkapnya</a>
@@ -863,12 +940,13 @@
     </footer>
 
     <div class="floating-container">
-        <a href="#" class="float-btn scroll-top-btn" id="scrollTopBtn" data-tooltip="Ke Atas">
+        <a href="#" class="float-btn scroll-top-btn" id="scrollTopBtn" data-tooltip="Ke Atas"
+            aria-label="Scroll to top">
             <i class="fas fa-chevron-up"></i>
         </a>
 
         <a href="https://wa.me/62895639068080?text=Halo%20Admin%20RukoMalang,%20saya%20tertarik%20dengan%20artikel%20Layout%20Kantor"
-            class="float-btn wa-btn" target="_blank" data-tooltip="Hubungi via WA">
+            class="float-btn wa-btn" target="_blank" data-tooltip="Hubungi via WA" aria-label="Chat WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
